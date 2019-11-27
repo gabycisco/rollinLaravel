@@ -11,6 +11,35 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/registro', function () {
+    return view('registro');
+});
+
+Route::get('/contacto', function () {
+    return view('contacto');
+});
+
+Route::get('/login', function () {
+    return view('login');
 });

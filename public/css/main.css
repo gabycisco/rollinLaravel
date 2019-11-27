@@ -1,0 +1,603 @@
+@font-face {
+  font-family:futurabook;
+  src:url(../fonts/FuturaBookfont.ttf);
+}
+@font-face {
+  font-family:futuraheavy;
+  src:url(../fonts/FuturaHeavyfont.ttf);
+}
+@font-face {
+  font-family:futuramedium;
+  src:url(../fonts/futuramediumbt.ttf);
+}
+@font-face {
+  font-family:futuramediumc;
+  src:url(../fonts/futuramediumcondensedbt.ttf);
+}
+@font-face {
+  font-family:futuralightc;
+  src:url(../fonts/Futura-CondensedLight.otf);
+}
+
+body {
+background-color:   #e8d8be;
+margin: 0;
+padding: 0;
+color:#3A3539;
+}
+
+nav {
+  text-align: center;
+  color: #E8D8BE!important;
+}
+nav a{
+  text-align: center;
+  color: #E8D8BE!important;
+  font-family:futuralightc;
+  font-size: 25px;
+}
+.navbar-toggler {
+  background-color: #3A3539!important;
+}
+.bg-dark {
+  background-color: #3A3539!important;
+}
+.navbar-dark {
+  background-color: #3A3539!important;
+}
+
+header{
+  height: 100px;
+  background-color: #3A3539;
+}
+
+
+/* CONTACTO */
+.portadaContacto{
+  background-image: url("../img/contacto.png") ;
+  height: 90vh;
+  height: 800px;
+  background-size: cover;
+  background-image: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  _margin-bottom: 50px;
+}
+
+.recuadroContacto{
+  background-color: rgba(232, 216, 190, 0.719);
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+}
+
+.formulario-de-contacto {
+  width: 100%;
+  _height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13.5px;
+  margin: 0 auto;
+  _max-height: 100vh;
+  color:#3A3539;
+}
+
+.recuadroContacto h5{
+  font-family: futuraheavy;
+  font-size: 30px;
+  _padding-top: 20px;
+  text-align: right
+}
+
+.recuadroContacto p{
+  font-family: futurabook!important;
+  font-size: 18px!important;
+  text-align: right!important;
+}
+
+.tel-contacto{
+  color:#EF3E3A;
+  font-family: futuralightc!important;
+  font-size: 36px!important;
+  text-align: right;
+  _padding-top: 60px;
+  _padding-bottom: 60px;
+}
+.button-contacto{
+  background-color: #3A3539;
+  border-radius: 10px;
+  display: flex;
+  _width:20%;
+  height: 50px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.button-contacto a{
+  color:#E8D8BE;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: futurabook;
+}
+.button-contacto input{
+  color:#E8D8BE;
+  font-size: 18px;
+  font-family: futurabook;
+  background: none;
+
+}
+
+/* HOME */
+.portadaHome{
+  background-image: url("../img/home1.png") ;
+  height: 90vh;
+  background-size: cover;
+  background-image: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+
+
+.bienvenidaHome{
+  background-color: rgba(255, 255, 255, 0.719);
+  text-align: center;
+
+}
+
+.imgProductos article{
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.promoDelMes{
+  display: flex;
+  justify-content: center;
+	align-items: center;
+}
+.promoDelMes h2{
+  color: #e8d8be;
+  text-align: center;
+  font-size:3em;
+  font-family:futuraheavy;
+  font-weight: bold;
+}
+
+
+.promoDelMes a{
+  color: #3A3539;
+  text-align: center;
+  font-size: 3em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+}
+
+.botonLinkSecundario{
+  background-color: #E8D8BE;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.botonLinkPrimario{
+  background-color: #3A3539;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.botonLinkPrimario a{
+  color: #E8D8BE;
+  text-align: center;
+  font-size: 3em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+}
+
+.listArticulos{
+  _margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  _flex-wrap: wrap;
+  _height: 400px;
+  _background-color: white;
+  background-image: url("../img/home_caja_productos.png");
+  background-size: cover;
+  background-image: no-repeat;
+
+}
+
+
+
+.newslater{
+  _margin-top: 25px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: url("../img/newslater.png");
+  background-size: cover;
+  background-image: no-repeat;
+  _height: 200px;
+}
+
+.formularioNews{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formularioNews button{
+  background-color: #E8D8BE;
+  border-radius: 10px;
+  color: #3A3539;
+  text-align: center;
+  font-size: 1em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+
+}
+
+.newslater h2{
+  color: #E8D8BE;
+  text-align: left;
+  padding-top:20px !important;
+  padding-bottom: 20px !important;
+}
+
+.container-registro {
+    background-color: #E8D8BE;
+
+
+}
+
+/* REGISTRO  */
+.registro {
+  background-color: #E8D8BE;
+}
+
+
+/* REGISTRO Fomulario*/
+footer{
+  padding-top: 20px;
+  background-color: #3A3539;
+}
+
+footer li, footer ul, footer a{
+  list-style:none;
+  padding: 0%;
+  text-decoration: none;
+  color: #E8D8BE;
+}
+
+
+footer li:hover, footer ul:hover, footer a:hover{
+  list-style:none;
+  padding: 0%;
+  text-decoration: none;
+  color: #E8D8BE;
+}
+
+
+/* Fomulario*/
+
+.formulario-de-registro {
+  width: 80%;
+  height: 1110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 13.5px;
+  margin: 0 auto;
+  max-height: 100vh;
+  color:#3A3539;
+}
+h2{
+  font-family:futuraheavy;
+}
+label{
+  font-family: futurabook;
+  text-align: left;
+}
+input, textarea{
+    outline-style: none;
+    border: none;
+    border-bottom: 1px solid #EF3E3A;
+    background-color: #E8D8BE;
+}
+
+.error {
+  font-size: 10px;
+  color: red;
+}
+/*REGISTRO IMAGEN LATERAL*/
+.imagen-lateral {
+  max-width: 100%;
+  height: 1000px;
+  max-height: 100vh;
+  background-image: url('../img/registrarse.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*BOTON FILES*/
+#foto{
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+   }
+
+.BOTONROJO{
+    transition: all .5s;
+    cursor: pointer;
+    background-color: #EF3E3A;
+    border-radius: 10px;
+    display: inline-flex;
+    width:150px;
+    height: 50px;
+    justify-content: center;
+    padding-top: 10px;
+    color:#E8D8BE;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: futurabook;
+    text-decoration:none;
+    }
+
+  .BOTONROJO a{
+    text-decoration:none;
+  }  
+
+
+
+
+/*BOTONES LOGIN Y REGISTRO*/
+.button{
+  border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.button button{
+  background-color: #3A3539;
+  border-radius: 10px;
+  display: flex;
+  width:20%;
+  height: 50px;
+  justify-content: center;
+  padding-top: 4px;
+  color:#E8D8BE;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: futurabook;
+
+}
+.button a{
+  color:#E8D8BE;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: futurabook;
+}
+
+
+.FORGOTPASS a{
+font-family: futurabook;
+color: #3A3539;
+text-decoration: underline;
+}
+
+/*LOGIN*/
+/*LOGIN IMAGEN LATERAL*/
+.imagen-lateral-inicio{
+  max-width: 100%;
+  _height: 700px;
+  max-height: 100vh;
+  background-image: url('../img/entrar.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/*FAQ*/
+.preguntasFaq{
+  background-color: #E8D8BE;
+
+}
+
+.imagenFaq{
+  /* display: flex;
+  width: 100vh;
+  _height: 50vh; */
+  padding: 0;
+}
+.preguntasFaq h2{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.preguntasFaq h3, .preguntasFaq p{
+  font-family: futuramedium;
+  text-align: left;
+}
+.preguntasFaq h3{
+  padding-top: 15px;
+}
+.dudas p{
+  color:#EF3E3A;
+  font-family: futuralightc;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/*FOOTER*/
+footer{
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #3A3539;
+  color: #E8D8BE;
+}
+footer .listas h5{
+  font-family: futuralightc;
+  font-size: 30px;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+footer .listas ul li a{
+  color: #E8D8BE;
+  text-decoration: none;
+  font-family: futuralightc;
+  padding-left: 50px;
+}
+footer .logo h5{
+  font-family: futuraheavy;
+  font-size: 30px;
+  padding-top: 20px;
+  text-align: right
+}
+footer .logo p{
+  font-family: futurabook;
+  font-size: 18px;
+  text-align: right;
+}
+
+/*INICIO - PERFIL */
+
+  .perfil{
+    _display: inline-flex;
+    justify-content: center;
+    _width:100%;
+    background-color: #3A3539;
+    color: #E8D8BE;
+    _padding-right: 50px;
+    _padding-top: 50px;
+    margin: 5px;
+    border-radius: 10px;
+
+
+  }
+
+  .contenedorPerfil{
+    background-color: #3A3539;
+    color: #E8D8BE;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 45px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+  }
+
+  
+  
+
+  .perfil1 {
+   display: inline-flex; 
+   flex-direction: column; 
+   margin-right: 50px;
+   padding-top: 100px;
+   padding-bottom: 50px;
+
+  }
+
+  .botonPerfil{
+    display: inline-flex;
+    flex-direction: row;
+  }
+
+  /* .perfil img{
+    width:200px;
+    padding-bottom: 20px;
+  } */
+
+  .contenedorImagenPerfil{
+    align-items: flex-end;
+  }
+  .contenedorImagenPerfil1{
+    text-align: center;
+  }
+
+  .contenedorImagenPerfil2{
+    text-align: center;
+    margin-top: 35px;
+  }
+  
+  #botonEliminarCuenta{
+    display: none;
+  }
+
+  .titPerfil{
+    color: #E8D8BE;
+    _text-align: center;
+    font-size: 3em;
+    font-family: futuralightc;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #EF3E3A;
+    margin-top: 50px;
+    padding-left: 15px;
+  }
+/* FIN - PERFIL */
+
+@media (max-width: 768px) {
+  footer h5, footer .logo p, footer .logo h5, footer .listas ul li, footer a{
+    text-align: center;
+  }
+  footer .listas ul li a{
+    padding-left: 0px !important;
+  }
+  footer .listas h5{
+    padding-left: 0px;
+  }
+
+  .listArticulos{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .formularioNews{
+    margin-bottom: 30px;
+  }
+
+  /* CONTACTO */
+  .portadaContacto{
+    height: auto;
+  }
+  .tel-contacto, .portadaContacto h5, .portadaContacto p{
+    text-align: center!important;
+  }
+  .portadaContacto article{
+    margin-bottom: 70px;
+  }
+
+  .titPerfil{
+    color: #E8D8BE;
+    font-size: 3em;
+    font-family: futuralightc;
+    text-decoration: none;
+    text-shadow: 2px 2px 2px #EF3E3A;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+
+
+}
