@@ -52,7 +52,7 @@ header{
 }
 
 
-/* CONTACTO */
+/* CONTACTO y Admin*/
 .portadaContacto{
   background-image: url("../img/contacto.png") ;
   height: 90vh;
@@ -63,14 +63,23 @@ header{
   justify-content: center;
   align-items: center;
   _margin-bottom: 50px;
+  padding-top: 20px;
+}
+
+
+.articleList{
+  background: white;
+  width: 100%;
+  height: 400px;
+  padding: 15px;
+  text-align: left;
+  overflow-y: scroll;
 }
 
 .recuadroContacto{
   background-color: rgba(232, 216, 190, 0.719);
   text-align: center;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
+  padding: 30px;
 }
 
 .formulario-de-contacto {
@@ -90,6 +99,10 @@ header{
   font-size: 30px;
   _padding-top: 20px;
   text-align: right
+}
+
+.recuadroContacto h2{
+  padding-bottom: 20px;
 }
 
 .recuadroContacto p{
@@ -115,13 +128,18 @@ header{
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-bottom: 5px;
 }
 .button-contacto a{
   color:#E8D8BE;
   text-decoration: none;
+  text-align: center;
   font-size: 18px;
   font-family: futurabook;
+  _font-family: futuralightc;
+  text-shadow: 2px 2px 2px #EF3E3A;
 }
+
 .button-contacto input{
   color:#E8D8BE;
   font-size: 18px;
@@ -139,7 +157,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 1px;
 }
 
 
@@ -201,7 +219,7 @@ header{
 
 .listArticulos{
   _margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 1px;
   padding-top: 50px;
   padding-bottom: 20px;
   _flex-wrap: wrap;
@@ -217,7 +235,7 @@ header{
 
 .newslater{
   _margin-top: 25px;
-  margin-bottom: 50px;
+  margin-bottom: 1px;
   padding-top: 20px;
   padding-bottom: 20px;
   background-image: url("../img/newslater.png");
@@ -232,7 +250,7 @@ header{
   align-items: center;
 }
 
-.formularioNews button{
+.formularioNews button {
   background-color: #E8D8BE;
   border-radius: 10px;
   color: #3A3539;
@@ -578,16 +596,19 @@ footer .logo p{
   }
 
   /* CONTACTO */
-  .portadaContacto{
+  .portadaContacto .portadaAdmin{
     height: auto;
   }
   .tel-contacto, .portadaContacto h5, .portadaContacto p{
     text-align: center!important;
   }
-  .portadaContacto article{
+  .portadaContacto article {
     margin-bottom: 70px;
   }
 
+  .portadaAdmin article {
+    margin-bottom: 70px;
+  }
   .titPerfil{
     color: #E8D8BE;
     font-size: 3em;
@@ -597,7 +618,6 @@ footer .logo p{
     margin-top: 50px;
     text-align: center;
   }
-
 
 
 }
