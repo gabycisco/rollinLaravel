@@ -4,6 +4,6 @@
 @endsection
 @section("principal")
 
-
+<img src="{{$product[1]->img}}" alt="">  
 
 @endsection

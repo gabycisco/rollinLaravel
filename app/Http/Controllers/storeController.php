@@ -8,7 +8,8 @@ use App\Product;
 class storeController extends Controller
 {
     function listado(){
-      $products = Product::all();
+      $product = Product::all();
+    //  dd($product);
       $vac = compact('product');
       return view('store',$vac);
     }
