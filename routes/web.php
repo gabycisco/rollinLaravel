@@ -36,9 +36,6 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::post('/registro','RegistrerController@validator');
-
-
 Route::get('/contacto', function () {
     return view('contacto');
 });
