@@ -58,5 +58,5 @@ Route::get('/detail/{id}',"productController@detalle");
 
 
 //Admin
-Route::get('/admin','productController@listadoAdmin');
+Route::get('/admin','roductController@listadoAdmin');
 Route::get('/edit/{id}',"productController@detalleAdmin");

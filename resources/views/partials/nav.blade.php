@@ -8,7 +8,7 @@ $navItems =
     ],
     1 => [
       "name" => "Registrase",
-      "url" => "/registro",
+      "url" => "/register",
     ],
 ];
 ?>

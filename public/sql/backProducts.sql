@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `precio`, `brand_id`, `active`, `img`, `created_at`, `updated_at`) VALUES
+INSERT INTO `products` (`id`, `name`, `price`, `brand_id`, `active`, `img`, `created_at`, `updated_at`) VALUES
 (1, 'Monopatiín Eléctrico Razor SX5', 38000, '1', 1, '/img/foto_productos/1.png\r\n', NULL, NULL),
 (2, 'Casco Protector Negro', 1600, '1', 1, '/img/foto_productos/2.png\r\n', NULL, NULL),
 (3, 'Monopatín Eléctrico \r\nVolmark T2', 40300, NULL, 1, '/img/foto_productos/3.png\r\n', NULL, NULL),

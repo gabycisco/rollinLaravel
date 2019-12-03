@@ -4,11 +4,11 @@ $navItems =
 [
     0 => [
       "name" => "Entrar",
-      "url" => "login.php",
+      "url" => "/login",
     ],
     1 => [
       "name" => "Registrase",
-      "url" => "registro.php",
+      "url" => "/register",
     ],
 ];
 ?>
