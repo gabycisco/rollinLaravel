@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 
-class productController extends Controller
+class ProductController extends Controller
 {
     function listado(){
       $products = Product::all();

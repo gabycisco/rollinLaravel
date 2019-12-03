@@ -45,7 +45,7 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/product','productController@listado');
+Route::get('/product','ProductController@listado');
 
 Auth::routes();
 
@@ -53,10 +53,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/detail/{id}',"productController@detalle");
+Route::get('/detail/{id}',"ProductController@detalle");
 
 
 
 //Admin
-Route::get('/admin','productController@listadoAdmin');
-Route::get('/edit/{id}',"productController@detalleAdmin");
+Route::get('/admin','ProductController@listadoAdmin');
+Route::get('/edit/{id}',"ProductController@detalleAdmin");
