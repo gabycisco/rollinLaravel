@@ -9,7 +9,7 @@
 
         </div>
         <div class="botonLinkPrimario">
-                <a class="col-12" href="#">IR A LA TIENDA</a>
+                <a class="col-12" href="/store">IR A LA TIENDA</a>
             </div>
     </div>
     <div class="row listArticulos">
