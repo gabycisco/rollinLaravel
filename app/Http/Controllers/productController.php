@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 
-class storeController extends Controller
+class productController extends Controller
 {
     function listado(){
       $products = Product::all();
     //  dd($product);
       $vac = compact('products');
-      return view('store',$vac);
+      return view('product',$vac);
     }
     function detalle ($id){
       $products = Product::find($id);

@@ -51,11 +51,11 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/store','storeController@listado');
+Route::get('/product','productController@listado');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/detail/{id}',"storeController@detalle");
+Route::get('/detail/{id}',"productController@detalle");

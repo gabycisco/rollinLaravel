@@ -379,7 +379,7 @@ img {
 
   .BOTONROJO a{
     text-decoration:none;
-  }  
+  }
 
 
 
@@ -523,15 +523,15 @@ footer .logo p{
     padding-bottom: 45px;
     padding-left: 30px;
     padding-right: 30px;
-    
+
   }
 
-  
-  
+
+
 
   .perfil1 {
-   display: inline-flex; 
-   flex-direction: column; 
+   display: inline-flex;
+   flex-direction: column;
    margin-right: 50px;
    padding-top: 100px;
    padding-bottom: 50px;
@@ -559,7 +559,7 @@ footer .logo p{
     text-align: center;
     margin-top: 35px;
   }
-  
+
   #botonEliminarCuenta{
     display: none;
   }
@@ -620,4 +620,13 @@ footer .logo p{
   }
 
 
+}
+.store {
+  background:#3A3539;
+  margin: 10px
+}
+.articulo {
+  box-sizing: border-box;
+  _background: blue;
+  _margin: 2px;
 }
