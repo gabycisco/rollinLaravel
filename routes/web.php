@@ -36,9 +36,6 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
-Route::post('/registro','RegistrerController@validator');
-
-
 Route::get('/contacto', function () {
     return view('contacto');
 });
@@ -47,9 +44,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
 Route::get('/product','productController@listado');
 
@@ -58,4 +52,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 Route::get('/detail/{id}',"productController@detalle");
+
+
+
+//Admin
+Route::get('/admin','productController@listadoAdmin');
+Route::get('/edit/{id}',"productController@detalleAdmin");

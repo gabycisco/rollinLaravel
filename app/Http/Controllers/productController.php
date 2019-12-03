@@ -18,4 +18,15 @@ class productController extends Controller
       $vac = compact('products');
       return view('detail',$vac);
     }
+    function listadoAdmin(){
+      $products = Product::all();
+    //  dd($product);
+      $vac = compact('products');
+      return view('admin',$vac);
+    }
+    function detalleAdmin ($id){
+      $products = Product::find($id);
+      $vac = compact('products');
+      return view('edit',$vac);
+    }
 }

@@ -11,7 +11,17 @@
               <section class="row">
                 <article class="col-md-10 col-xs-12">
                     <section class="articleList">
-                        No se encontraron artículos.
+                    @forelse ($products as $product)
+  <a href="/edit/{{$product->id}}"><img src="{{$product->img}}" alt="{{$product->name}}" width="400px"></a>
+  <a href="#"> <h3>{{$product->price}}</h3></a>
+  <h3>{{$product->name}}</h3>
+  <h3>{{$product->precio}}</h3>
+  </div>
+@empty
+    No se encontraron artículos.
+@endforelse
+
+
                     </section> 
                 </article>
                 <article class="col-md-2 col-xs-12">
