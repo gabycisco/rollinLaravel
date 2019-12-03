@@ -36,6 +36,9 @@ Route::get('/registro', function () {
     return view('registro');
 });
 
+Route::post('/registro','RegistrerController@validator');
+
+
 Route::get('/contacto', function () {
     return view('contacto');
 });
@@ -49,5 +52,10 @@ Route::get('/admin', function () {
 });
 
 Route::get('/store','storeController@listado');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('/detail/{id}',"storeController@detalle");
