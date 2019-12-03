@@ -49,3 +49,5 @@ Route::get('/admin', function () {
 });
 
 Route::get('/store','storeController@listado');
+
+Route::get('/detail/{id}',"storeController@detalle");
