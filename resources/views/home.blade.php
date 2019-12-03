@@ -4,8 +4,19 @@
 @endsection
 @section("principal")
     <div class="row portadaHome">
+    
+
+    <div class="principalFondoVideo">
+      <div class="videoFondoBlur"></div>
+      <video class="videoFondo" src="video/background.mp4" autoplay loop muted width="100%"> autoplay loop</video>
+    </div>
+
+
+    
         <div class="col-md-12 bienvenidaHome">
-            <h2>¡CONOCÉ NUESTROS MONOPATINES! </h2>
+            <div>
+            <h2>¡CONOCÉ NUESTROS MONOPATINES!</h2>
+            </div> 
 
         </div>
         <div class="botonLinkPrimario">

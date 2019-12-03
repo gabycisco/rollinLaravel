@@ -47,9 +47,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
 Route::get('/store','storeController@listado');
 
@@ -59,3 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/detail/{id}',"storeController@detalle");
+
+//Admin
+Route::get('/admin','storeController@listadoAdmin');
+Route::get('/edit/{id}',"storeController@detalleAdmin");
