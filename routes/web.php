@@ -60,3 +60,4 @@ Route::get('/detail/{id}',"ProductController@detalle");
 //Admin
 Route::get('/admin','ProductController@listadoAdmin');
 Route::get('/edit/{id}',"ProductController@detalleAdmin");
+Route::get('/brands','BrandController@listado');
