@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -18,15 +18,26 @@ class ProductController extends Controller
       $vac = compact('products');
       return view('detail',$vac);
     }
-    function listadoAdmin(){
+
+
+
+    //Administrador de Artículos
+    function indexAdmin(){
       $products = Product::all();
-    //  dd($product);
       $vac = compact('products');
-      return view('admin',$vac);
+      return view('adminProducts',$vac);
     }
-    function detalleAdmin ($id){
-      $products = Product::find($id);
-      $vac = compact('products');
-      return view('edit',$vac);
+    function showAdmin ($id){
+      $product = Product::find($id);
+      $vac = compact('product');
+      return view('adminProduct',$vac);
+    }
+
+    public function destroy(Request $formulario)
+    {
+      $id=$formulario["id"];
+      $product = Product::find($id);
+      $product->delete();
+      return redirect("/adminProducts");
     }
 }

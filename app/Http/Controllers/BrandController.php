@@ -14,14 +14,10 @@ class BrandController extends Controller
      */
     public function index()
     {
-        
-    }
-
-    function listado(){
         $brands = Brand::all();
-        dd($brands);
-        
-      }
+        //dd($brands);
+        return view ('brands', compact(¨brands¨));
+    }
 
     /**
      * Show the form for creating a new resource.

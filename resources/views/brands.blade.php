@@ -4,11 +4,11 @@
 @endsection
 @section("principal")
 
-<h1>TIENDA</h1>
+<h1>Administrador de Marcas</h1>
 <div> <!--para cargar productos-->
 <div class="row store">
-@forelse ($products as $product)
-
+@forelse ($brands as $brand)
+    
     <div class="col-3 articulo">
       <a href="/detail/{{$product->id}}"><img src="{{$product->img}}" alt="{{$product->name}}" width="400px"></a>
       <a href="/detail/{{$product->id}}"> <h3>{{$product->name}}</h3></a>
@@ -17,7 +17,7 @@
     </div>
 
 @empty
-
+  Todavía no hay marcas cargadas
 @endforelse
   </div>
 
