@@ -1,8 +1,6 @@
 @extends('plantilla')
 
-@section('title')
-    Registro
-@endsection
+@section('title','Registro')
 
 @section('principal')
 <div class="row container-registro">
