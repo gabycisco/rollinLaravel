@@ -58,5 +58,8 @@ Route::get('/detail/{id}',"ProductController@detalle");
 
 
 //Admin
-Route::get('/admin','ProductController@listadoAdmin');
-Route::get('/edit/{id}',"ProductController@detalleAdmin");
+Route::get('/adminProducts','ProductController@indexAdmin');
+Route::get('/adminProduct/{id}',"ProductController@showAdmin");
+Route::get('/brands','BrandController@index');
+Route::post('/deleteProduct','ProductController@destroy');
+
