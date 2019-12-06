@@ -91,7 +91,8 @@
                 </section>
             @empty
                 <div class="adminProductsEmpty">
-                    <h4>:( Todavía no hay cargado ningún artículo.</h4>
+                    <img src="/img/no-products.png" width="70px" alt="">
+                    <h4>Todavía no hay cargado ningún artículo.</h4>
                 </div>
             @endforelse
         </article>
