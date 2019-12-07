@@ -165,6 +165,19 @@ header{
   padding-bottom: 10px;
   margin-bottom: 5px;
 }
+
+.button-contactoClaro{
+  background-color: #E8D8BE;
+  border-radius: 10px;
+  display: flex;
+  _width:20%;
+  height: 50px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
 .button-contacto a{
   color:#E8D8BE;
   text-decoration: none;
@@ -177,6 +190,14 @@ header{
 
 .button-contacto input{
   color:#E8D8BE;
+  font-size: 18px;
+  font-family: futurabook;
+  background: none;
+
+}
+
+.button-contactoClaro input{
+  color:#3A3539;
   font-size: 18px;
   font-family: futurabook;
   background: none;

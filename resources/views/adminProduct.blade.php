@@ -57,21 +57,23 @@
                             <p>Marca: {{$product->brand_id}}</p>
                         </div>
                         <div class="productDescription col-12">
-                          <p>{{$product->description}}</p>
+                          <p>{!!nl2br($product->description)!!}</p>
                         </div>
                         <div class="productPrice col-12">
                            <p>$ {{$product->price}}</p>
                         </div>
                     </div>
                     <div class="col-2 row">
-                        <button class="col-12">Modificar</button>
-                        <!-- <button class="col-12">Eliminar</button> -->
-                        <form action="/deleteProduct" method="post" class="col-12 row">
-                            {{csrf_field()}}
-                            <input type="hidden" name="id" value="{{$product->id}}">
-                            <!-- <input type="submit" name="" value="Eliminar">; -->
-                            <button class="col-12" type="submit">Eliminar</button>
-                        </form>
+                        <div class="button-contacto col-12">
+                            <input type="submit" name="" value="Modificar">
+                        </div>
+                        <div class="button-contacto col-12">
+                            <form action="/deleteProduct" method="post">
+                                {{csrf_field()}}
+                                <input type="hidden" name="id" value="{{$product->id}}">
+                                <input type="submit" name="" value="Eliminar">
+                            </form>
+                        </div>
                     </div>
                 </section>
         </article>
