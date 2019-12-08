@@ -9,6 +9,7 @@
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
+          <br><br>
         </section>
 
         <section class="col-lg-5 col-xs-12 row contenedorImagenPerfil">
@@ -18,17 +19,19 @@
           <div class="col-12 contenedorImagenPerfil2">
             <div class="BOTONROJO botonPerfil">
               <label for="foto">CAMBIAR FOTO</label>
-              <input id="foto" type="file" name="foto" value="">
+             <input id="foto" type="file" name="foto" value="">
             </div>
           </div>
         </section>
 
         <section class="col-lg-7 col-xs-12">
-          <h3>NOMBRE APELLIDO</h3>
-          <p>Email: nombre.apellido@gmail.com</p>
+          <h3>{{$users->name . " ".$users->surname}}</h3>
+          <br>
+          <p>Email: {{$users->email}}</p>
           <p>Fecha de nacimiento: </p>
           <p>Dirección: </p>
           <p>Teléfono: </p>
+          <br><br>
           <div class="BOTONROJO botonPerfil">
             <a href="#">EDITAR DATOS</a>
           </div>

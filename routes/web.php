@@ -19,27 +19,22 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
 
 Route::get('/faq', function () {
     return view('faq');
 });
-
 
 Route::get('/login', function () {
     return view('login');
 });
 
 //modificaciones de Marina. Pongo para encontrarlo facil jajajja
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+Route::get('/perfil/{id}', 'UserController@verUsuario');
 
 Route::get('/mochila', function () {
     return view('cart');
 });
+
 //fin de Marina SHIT
 
 Route::get('/registro', function () {

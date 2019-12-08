@@ -589,7 +589,7 @@ footer .logo p{
     background-color: #3A3539;
     color: #E8D8BE;
     margin-top: 50px;
-    margin-bottom: 70px;
+    margin-bottom: 60px;
     border-radius: 10px;
     padding-top: 30px;
     padding-bottom: 45px;
@@ -688,6 +688,7 @@ footer .logo p{
     text-shadow: 2px 2px 2px #EF3E3A;
     margin-top: 50px;
     text-align: center;
+
   }
 
 
@@ -719,6 +720,7 @@ footer .logo p{
   text-decoration: none;
   text-shadow: 2px 2px 2px #EF3E3A;
   padding-top: 100px;
+  margin-left: 63px;
   text-align: center;
 }
 
