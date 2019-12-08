@@ -37,7 +37,7 @@ Route::get('/perfil', function () {
     return view('perfil');
 });
 
-Route::get('/carrito', function () {
+Route::get('/mochila', function () {
     return view('cart');
 });
 //fin de Marina SHIT
