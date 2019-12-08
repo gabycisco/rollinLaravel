@@ -53,9 +53,10 @@
             </article>
         </section>
         <section class="formularioNews col-md-5  col-xs-12 row">
-            <form class="col-12 row">
-                <div class="col-11" style="padding: 0;" >
-                    <input type="email" class="form-control" placeholder="  e-mail">
+            <form method='POST' action='/NLEnviado' class="col-12 row">
+            {{csrf_field()}}
+                <div class="col-11" style="padding: 0;" >   
+                <input type="email" class="form-control" placeholder="e-mail" name='email'>
                 </div>
                 <div class="col-1" >
                     <button  type="submit" class="btn">ENVIAR</button>
