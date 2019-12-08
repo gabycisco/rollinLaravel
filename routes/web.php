@@ -60,7 +60,7 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/product','ProductController@listado');
+Route::get('/store','ProductController@listado');
 
 Auth::routes();
 
