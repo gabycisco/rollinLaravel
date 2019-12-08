@@ -28,14 +28,16 @@ Route::get('/login', function () {
     return view('login');
 });
 
-//modificaciones de Marina. Pongo para encontrarlo facil jajajja
+//RUTAS PERFIL
 Route::get('/perfil/{id}', 'UserController@verUsuario');
+Route::get('/editarPerfil/{id}', 'UserController@modificarDatos');
+Route::post('/editarPerfil/{id}', 'UserController@modificarDatos');
 
+//RUTAS MOCHILA
 Route::get('/mochila', function () {
     return view('cart');
 });
 
-//fin de Marina SHIT
 
 Route::get('/registro', function () {
     return view('registro');
