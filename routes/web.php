@@ -30,8 +30,9 @@ Route::get('/login', function () {
 
 //RUTAS PERFIL
 Route::get('/perfil/{id}', 'UserController@verUsuario');
-Route::get('/editarPerfil/{id}', 'UserController@modificarDatos');
+Route::get('/editarPerfil/{id}', 'UserController@tomarDatos');
 Route::post('/editarPerfil/{id}', 'UserController@modificarDatos');
+Route::post('/editarPerfil/{id}', 'UserController@update_avatar');
 
 //RUTAS MOCHILA
 Route::get('/mochila', function () {
