@@ -38,6 +38,14 @@ Route::get('/mochila', function () {
     return view('cart');
 });
 
+//RUTAS CONTACT
+Route::get('/formularioEnviado', 'ContactController@create');
+Route::post('/formularioEnviado', 'ContactController@create');
+
+//RUTA GRACIAS
+Route::get('/gracias', function(){
+    return view ('gracias');
+});
 
 Route::get('/registro', function () {
     return view('registro');
