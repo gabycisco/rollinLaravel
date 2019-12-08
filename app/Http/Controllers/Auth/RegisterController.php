@@ -64,10 +64,11 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {   dd($data);
-        //$ruta = data->file('avatar')->store("public");
+    {   $req = request();
+        $ruta = $req->file("avatar")->store("public");
 
-        return User::create([
+
+         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
