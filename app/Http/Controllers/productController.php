@@ -22,22 +22,38 @@ class ProductController extends Controller
 
 
     //Administrador de Artículos
-    function indexAdmin(){
+    function adminIndex(){
       $products = Product::all();
       $vac = compact('products');
-      return view('adminProducts',$vac);
+
+      return view('adminProducts/index',$vac);
     }
-    function showAdmin ($id){
+    function adminEdit ($id){
       $product = Product::find($id);
       $vac = compact('product');
-      return view('adminProduct',$vac);
+      return view('adminProducts/edit',$vac);
     }
 
-    public function destroy(Request $formulario)
+    public function AdminDestroy(Request $formulario)
     {
       $id=$formulario["id"];
       $product = Product::find($id);
+
       $product->delete();
-      return redirect("/adminProducts");
+      return redirect("admin");
+    }
+
+    public function create (Request $formulario)
+    {
+
+
+      $NewProduct = new Product();
+      $NewProduct->name = $formulario["name"];
+      $NewProduct->description = $formulario["description"];
+      $NewProduct->price = $formulario["price"];
+      $NewProduct->brand_id = $formulario["brand_id"];
+
+      $NewProduct->save();
+      return redirect("admin");
     }
 }

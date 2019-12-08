@@ -58,8 +58,14 @@ Route::get('/detail/{id}',"ProductController@detalle");
 
 
 //Admin
-Route::get('/adminProducts','ProductController@indexAdmin');
-Route::get('/adminProduct/{id}',"ProductController@showAdmin");
+Route::get('/admin','ProductController@adminIndex');
+Route::get('/admin/create', function () {
+    return view('adminProducts/create');
+});
+Route::post('/admin/create','ProductController@create');
+
+
+Route::get('/admin/edit/{id}',"ProductController@adminEdit");
+Route::post('/admin/destroy','ProductController@adminDestroy');
 Route::get('/brands','BrandController@index');
-Route::post('/deleteProduct','ProductController@destroy');
 
