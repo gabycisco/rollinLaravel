@@ -32,6 +32,16 @@ Route::get('/login', function () {
     return view('login');
 });
 
+//modificaciones de Marina. Pongo para encontrarlo facil jajajja
+Route::get('/perfil', function () {
+    return view('perfil');
+});
+
+Route::get('/mochila', function () {
+    return view('cart');
+});
+//fin de Marina SHIT
+
 Route::get('/registro', function () {
     return view('registro');
 });

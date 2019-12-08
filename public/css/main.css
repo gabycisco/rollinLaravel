@@ -414,7 +414,7 @@ img {
 
 
 /*BOTON FILES*/
-#foto{
+#avatar{
    width: 0.1px;
    height: 0.1px;
    opacity: 0;
@@ -422,6 +422,15 @@ img {
    position: absolute;
    z-index: -1;
    }
+
+   #foto{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
 
 .BOTONROJO{
     transition: all .5s;
@@ -568,9 +577,9 @@ footer .logo p{
     _width:100%;
     background-color: #3A3539;
     color: #E8D8BE;
-    _padding-right: 50px;
+    
     _padding-top: 50px;
-    margin: 5px;
+    
     border-radius: 10px;
 
 
@@ -579,13 +588,13 @@ footer .logo p{
   .contenedorPerfil{
     background-color: #3A3539;
     color: #E8D8BE;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 70px;
     border-radius: 10px;
     padding-top: 30px;
     padding-bottom: 45px;
     padding-left: 30px;
-    padding-right: 30px;
+    
 
   }
 
@@ -595,7 +604,6 @@ footer .logo p{
   .perfil1 {
    display: inline-flex;
    flex-direction: column;
-   margin-right: 50px;
    padding-top: 100px;
    padding-bottom: 50px;
 
@@ -682,6 +690,8 @@ footer .logo p{
     text-align: center;
   }
 
+
+
   /* HOME */
   .portadaHome{
     background-image: url("../img/home1.png") ;
@@ -699,4 +709,29 @@ footer .logo p{
   box-sizing: border-box;
   _background: blue;
   _margin: 2px;
+}
+
+/*mochila*/
+.mochilaTitulo{
+  color: #3A3539;
+  font-size: 3em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.contenedorVoucher{
+display: inline-block;
+text-align: right;
+padding-right: 50px;
+margin-top:150px; 
+font-family: futuralightc;
+font-size: 15pt;
+}
+
+#voucher{
+  font-family: futuralightc;
+  font-size: 18pt; 
 }

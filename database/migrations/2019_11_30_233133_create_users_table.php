@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->char('name', 100);
             $table->char('surname', 100);
+            $table->string('avatar')->nullable();
             $table->char('phone', 100)->nullable();
             $table->char('address', 255)->nullable();
             $table->char('img', 255)->nullable();	
@@ -24,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->char('password', 255)->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
+            
         });
     }
 
