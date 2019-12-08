@@ -11,7 +11,7 @@ class ProductController extends Controller
       $products = Product::all();
     //  dd($product);
       $vac = compact('products');
-      return view('product',$vac);
+      return view('store',$vac);
     }
     function detalle ($id){
       $products = Product::find($id);

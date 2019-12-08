@@ -20,7 +20,7 @@
 
         </div>
         <div class="botonLinkPrimario">
-                <a class="col-12" href="/product">IR A LA TIENDA</a>
+                <a class="col-12" href="/store">IR A LA TIENDA</a>
             </div>
     </div>
     <div class="row listArticulos">
@@ -41,7 +41,7 @@
         <section class="promoDelMes col-md-5  col-xs-12 row">
             <h2 class="col-12">20% OFF<br>EN TODO EL SITIO!</h2>
             <div class="botonLinkSecundario">
-                <a class="col-12" href="#">IR A LA TIENDA</a>
+                <a class="col-12" href="/store">IR A LA TIENDA</a>
             </div>
         </section>
     </div>

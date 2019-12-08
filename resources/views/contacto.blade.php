@@ -89,8 +89,9 @@ if ($_POST) {
               </div>
               <section class="row">
                 <article class="col-md-6 col-xs-12">
-                  <form class="formulario-de-contacto" method="POST" action="contacto.php">
-                    <label for="name">Nombre</label>
+                  <form class="formulario-de-contacto" method="POST" action="/formularioEnviado">
+                  {{csrf_field()}}
+                  <label for="name">Nombre</label>
                     <input id="name" type="text" name="name" value="<?=$nombre?>"placeholder="">
                     <br>
                     <span class="error"><?=$errorNombre?></span>
