@@ -14,7 +14,7 @@
 
         <section class="col-lg-5 col-xs-12 row contenedorImagenPerfil">
           <div class="col-12 contenedorImagenPerfil1">
-            <img src="/img/contactoDefault.png" width="83%" alt="contactoFotoDefault">
+          <img src="/storage/{{$users->avatar}}" width="83%" alt="contactoFotoDefault">
           </div>    
           <div class="col-12 contenedorImagenPerfil2">
             <div class="BOTONROJO botonPerfil">
