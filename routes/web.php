@@ -75,3 +75,5 @@ Route::get('/admin/edit/{id}',"ProductController@adminEdit");
 Route::post('/admin/destroy','ProductController@adminDestroy');
 Route::get('/brands','BrandController@index');
 
+//Carrito de compras.
+Route::get('/cart','CartController@show');
