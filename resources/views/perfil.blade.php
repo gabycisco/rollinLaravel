@@ -16,12 +16,6 @@
           <div class="col-12 contenedorImagenPerfil1">
             <img src="{{$users->img}}" width="83%" alt="">
           </div>    
-          <div class="col-12 contenedorImagenPerfil2">
-            <div class="BOTONROJO botonPerfil">
-              <label for="foto">CAMBIAR FOTO</label>
-             <input id="foto" type="file" name="foto" value="">
-            </div>
-          </div>
         </section>
 
         <section class="col-lg-7 col-xs-12">
@@ -33,7 +27,7 @@
           <p>Teléfono: {{$users->phone}}</p>
           <br><br>
           <div class="BOTONROJO botonPerfil">
-            <a href="#">EDITAR DATOS</a>
+            <a href="/editarPerfil/{id}">EDITAR DATOS</a>
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="#">VER COMPRAS</a>

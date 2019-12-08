@@ -16,7 +16,7 @@ class UserController extends Controller
     function modificarDatos($id){
         $users=User::find($id);
         $vac=compact('users');
-        return view('perfil',$vac);   
+        return view('editarPerfil',$vac);   
     }
     
 
