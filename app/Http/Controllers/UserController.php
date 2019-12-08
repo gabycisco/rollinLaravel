@@ -12,6 +12,12 @@ class UserController extends Controller
         $vac=compact('users');
         return view('perfil',$vac);
     }
+
+    function modificarDatos($id){
+        $users=User::find($id);
+        $vac=compact('users');
+        return view('perfil',$vac);   
+    }
     
 
 }

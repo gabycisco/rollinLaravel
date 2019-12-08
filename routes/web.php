@@ -30,6 +30,7 @@ Route::get('/login', function () {
 
 //modificaciones de Marina. Pongo para encontrarlo facil jajajja
 Route::get('/perfil/{id}', 'UserController@verUsuario');
+Route::get('/perfil/{id}', 'UserController@modificarDatos');
 
 Route::get('/mochila', function () {
     return view('cart');

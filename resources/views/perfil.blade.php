@@ -14,7 +14,7 @@
 
         <section class="col-lg-5 col-xs-12 row contenedorImagenPerfil">
           <div class="col-12 contenedorImagenPerfil1">
-            <img src="/img/contactoDefault.png" width="83%" alt="contactoFotoDefault">
+            <img src="{{$users->img}}" width="83%" alt="">
           </div>    
           <div class="col-12 contenedorImagenPerfil2">
             <div class="BOTONROJO botonPerfil">
@@ -28,9 +28,9 @@
           <h3>{{$users->name . " ".$users->surname}}</h3>
           <br>
           <p>Email: {{$users->email}}</p>
-          <p>Fecha de nacimiento: </p>
-          <p>Dirección: </p>
-          <p>Teléfono: </p>
+
+          <p>Dirección: {{$users->address}} </p>
+          <p>Teléfono: {{$users->phone}}</p>
           <br><br>
           <div class="BOTONROJO botonPerfil">
             <a href="#">EDITAR DATOS</a>
