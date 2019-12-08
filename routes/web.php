@@ -19,27 +19,22 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/perfil', function () {
-    return view('perfil');
-});
 
 Route::get('/faq', function () {
     return view('faq');
 });
-
 
 Route::get('/login', function () {
     return view('login');
 });
 
 //modificaciones de Marina. Pongo para encontrarlo facil jajajja
-Route::get('/perfil', function () {
-    return view('perfil');
-});
+Route::get('/perfil/{id}', 'UserController@verUsuario');
 
 Route::get('/mochila', function () {
     return view('cart');
 });
+
 //fin de Marina SHIT
 
 Route::get('/registro', function () {
@@ -67,8 +62,14 @@ Route::get('/detail/{id}',"ProductController@detalle");
 
 
 //Admin
-Route::get('/adminProducts','ProductController@indexAdmin');
-Route::get('/adminProduct/{id}',"ProductController@showAdmin");
+Route::get('/admin','ProductController@adminIndex');
+Route::get('/admin/create', function () {
+    return view('adminProducts/create');
+});
+Route::post('/admin/create','ProductController@create');
+
+
+Route::get('/admin/edit/{id}',"ProductController@adminEdit");
+Route::post('/admin/destroy','ProductController@adminDestroy');
 Route::get('/brands','BrandController@index');
-Route::post('/deleteProduct','ProductController@destroy');
 
