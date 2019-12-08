@@ -14,7 +14,7 @@
 
         <section class="col-lg-5 col-xs-12 row contenedorImagenPerfil">
           <div class="col-12 contenedorImagenPerfil1">
-            <img src="{{$users->img}}" width="83%" alt="">
+          <img src="/storage/{{$users->avatar}}" width="83%" alt="contactoFotoDefault">
           </div>    
         </section>
 

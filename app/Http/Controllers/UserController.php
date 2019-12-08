@@ -19,6 +19,7 @@ class UserController extends Controller
         return view('editarPerfil',$vac);   
     }
     
+    
 
 }
 
