@@ -43,8 +43,8 @@ Route::get('/formularioEnviado', 'ContactController@create');
 Route::post('/formularioEnviado', 'ContactController@create');
 
 //RUTA GRACIAS
-Route::get('/gracias', function(){
-    return view ('gracias');
+Route::get('/graciasContacto', function(){
+    return view ('graciasContacto');
 });
 
 //RUTAS NEWSLETTER
