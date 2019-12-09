@@ -47,6 +47,10 @@ Route::get('/gracias', function(){
     return view ('gracias');
 });
 
+//RUTAS NEWSLETTER
+Route::get('/NLEnviado', 'SubscriberController@create');
+Route::post('/NLEnviado', 'SubscriberController@create');
+
 Route::get('/registro', function () {
     return view('registro');
 });

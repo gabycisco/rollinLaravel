@@ -45,8 +45,6 @@ class ProductController extends Controller
 
     public function create (Request $formulario)
     {
-
-
       $NewProduct = new Product();
       $NewProduct->name = $formulario["name"];
       $NewProduct->description = $formulario["description"];
