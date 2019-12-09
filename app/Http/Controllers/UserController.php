@@ -16,21 +16,29 @@ class UserController extends Controller
 
 
     function modificarDatos(Request $request){
-       /*  $request->validate([
+        
+        $user = Auth::user();
+    /* 
+        if($request->avatar){
+        $request->validate([
             'avatar' => 'file',
         ]);
 
-        $user = Auth::user();
+        $avatarName = $request->file('avatar')->store('public');
+    } */
+        
 
-        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+        
 
-        $request->avatar->store('public');
+        $user->name = $request["name"];
+        $user->surname = $request["surname"];
+        $user->email =$request["email"];
+        $user->address =$request["address"];
+        $user->phone = $request["phone"];
+        /* $user->avatar = basename($avatarName); */
 
-        $user->avatar = $avatarName;
-        $user->save(); */
-
-        $user->name = $request->name; 
         $user->save();
+        
         return back();
 
     }

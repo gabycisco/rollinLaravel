@@ -21,29 +21,31 @@
         <section class="col-lg-7 col-xs-12">
           <h3>EDITAR DATOS</h3>
           <br>
-          <form action="">
+          <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-          <label for="name">Nombre:</label>
-             <input id="name" type="text" name="name" value="{{$users->name}}">
+            <label for="name">Nombre:</label>
+            <input id="name" type="text" name="name" value="{{$users->name}}">
              <br>
-             <label for="surname">Apellido:</label>
-             <input id="surname" type="text" name="surname" value="{{$users->surname}}">
+            <label for="surname">Apellido:</label>
+            <input id="surname" type="text" name="surname" value="{{$users->surname}}">
              <br>
-             <label for="email">Email:</label>
-             <input id="email" type="email" name="email" value="{{$users->email}}">
+            <label for="email">Email:</label>
+            <input id="email" type="email" name="email" value="{{$users->email}}">
              <br>
-             <label for="address">Dirección:</label>
-             <input id="addrees" type="text" name="address" value="{{$users->address}}">
+            <label for="address">Dirección:</label>
+            <input id="addrees" type="text" name="address" value="{{$users->address}}">
              <br>
-             <label for="telefono">Teléfono:</label>
-             <input id="phone" type="number" name="phone" value="{{$users->phone}}">
-          <br><br><br>
-          <div class="BOTONROJO botonPerfil">
-            <a href="#">GUARDAR</a>
-          </div>
-          <div class="BOTONROJO botonPerfil">
-              <label for="foto">CAMBIAR FOTO</label>
-             <input id="foto" type="file" name="foto" value="">
+            <label for="telefono">Teléfono:</label>
+            <input id="phone" type="number" name="phone" value="{{$users->phone}}">
+          <br>
+          <br>
+          <br>
+            <div class="BOTONROJO botonPerfil">
+            <button type="submit">GUARDAR</button>
+            </div>
+            <div class="BOTONROJO botonPerfil">
+              <label for="avatar">CAMBIAR FOTO</label>
+             <input id="avatar" type="file" name="avatar" value="">
             </div>
           </form>
           
