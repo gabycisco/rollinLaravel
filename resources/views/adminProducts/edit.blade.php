@@ -20,7 +20,7 @@
         border-radius: 10px;
         display:flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         padding: 32px 20px;
     }
     .productTitle,.productPrice{
@@ -47,7 +47,7 @@
         <article class="col-12">
                 <section class="row">
                     <div class="productImg col-2">
-                      <img src="{{$product->img}}" alt="{{$product->name}}">
+                      <img src="/storage/{{$product->img}}" alt="{{$product->name}}">
                     </div>
                     <div class="col-8 row">
                         <div class="productTitle col-12">
@@ -57,6 +57,7 @@
                             <p>Marca: {{$product->brand_id}}</p>
                         </div>
                         <div class="productDescription col-12">
+                            <p>Detalle:</p>
                           <p>{!!nl2br($product->description)!!}</p>
                         </div>
                         <div class="productPrice col-12">

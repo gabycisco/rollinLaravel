@@ -60,7 +60,7 @@
                             <img src="/img/no-photo.png" width="100%" alt="">
                         </div>
                         
-                        <form action="/admin/create" method="post" class="col-7 offset-1 row">
+                        <form action="/admin/create" method="post" class="col-7 offset-1 row" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <label for="name" class="col-12">Nombre</label>
                             <input type="text" name="name" class="campoACompletar col-12" value={{old("name")}}>
@@ -74,7 +74,9 @@
                             <label for="price" class="col-12">Precio</label>
                             <p>$ <input type="text" name="price" class="campoACompletar col-6" value={{old("price")}}></p>   
                             
-
+                            <label for="imgProd" class="col-12">Imagen</label>
+                            <input type="file" name="imgProd" class="campoACompletar col-6" value={{old("imgProd")}}>
+                            
                             <div class="button-contacto col-2 offset-10">
                             <input type="submit" name="" value="Enviar">
                             </div>

@@ -63,7 +63,7 @@
                 <section class="row">
                     <div class="productImg col-2">
                         <!-- <img src="/img/foto_productos/xiaomi-mi-electric-scooter-m365.jpg" alt=""> -->
-                        <a href="/admin/edit/{{$product->id}}"><img src="{{$product->img}}" alt="{{$product->name}}"></a>
+                        <a href="/admin/edit/{{$product->id}}"><img src="/storage/{{$product->img}}" alt="{{$product->name}}"></a>
                     </div>
                     <div class="col-8 row">
                         <div class="productTitle col-12">

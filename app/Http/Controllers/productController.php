@@ -45,11 +45,19 @@ class ProductController extends Controller
 
     public function create (Request $formulario)
     {
+      $path = $formulario -> file("imgProd") -> store("public");
+      $nombreArchivo=basename($path);
+     
+
+
+
       $NewProduct = new Product();
+      $NewProduct->img = $nombreArchivo;
       $NewProduct->name = $formulario["name"];
       $NewProduct->description = $formulario["description"];
       $NewProduct->price = $formulario["price"];
       $NewProduct->brand_id = $formulario["brand_id"];
+
 
       $NewProduct->save();
       return redirect("admin");
