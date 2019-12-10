@@ -42,9 +42,14 @@ Route::get('/mochila', function () {
 Route::get('/formularioEnviado', 'ContactController@create');
 Route::post('/formularioEnviado', 'ContactController@create');
 
-//RUTA GRACIAS
+//RUTA GRACIAS CONTACTO
 Route::get('/graciasContacto', function(){
     return view ('graciasContacto');
+});
+
+//RUTA GRACIAS POR COMPRA
+Route::get('/graciasCompra', function(){
+    return view ('graciasCompra');
 });
 
 //RUTAS NEWSLETTER

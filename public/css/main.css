@@ -737,3 +737,8 @@ font-size: 15pt;
   font-family: futuralightc;
   font-size: 18pt; 
 }
+
+article.fotoCompra{
+  display: inline-flex;
+  width: 10%;
+}
