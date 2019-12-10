@@ -47,6 +47,9 @@
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
+            <div class="BOTONROJO botonPerfil">
+                <button type="">Eliminar Perfil</button>
+            </div>
           </form>
           
         </section>
