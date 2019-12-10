@@ -29,10 +29,6 @@ class UserController extends Controller
         $user->avatar = basename($avatarName);
     } 
 
-        
-
-        
-
         $user->name = $request["name"];
         $user->surname = $request["surname"];
         $user->email =$request["email"];
@@ -53,7 +49,14 @@ class UserController extends Controller
         
     }
     
-    
+    public function perfilDestroy(Request $req)
+    {
+      $id=$req["id"];
+      $user = User::find($id);
+
+      $user->delete();
+      return redirect("/");
+    }
 
     
 

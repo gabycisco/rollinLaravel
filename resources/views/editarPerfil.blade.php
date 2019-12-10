@@ -47,9 +47,11 @@
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
-            <div class="BOTONROJO botonPerfil">
-                <button type="">Eliminar Perfil</button>
-            </div>
+            
+            <form action="/UserController/perfilDestroy" method="post">
+              {{csrf_field()}}
+              <input type="hidden" name="id" value="{{$users->id}}">
+              <input class="BOTONROJO botonPerfil" type="submit" name="" value="Eliminar">
           </form>
           
         </section>
