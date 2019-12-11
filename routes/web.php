@@ -84,4 +84,4 @@ Route::post('/admin/destroy','ProductController@adminDestroy');
 Route::get('/brands','BrandController@index');
 
 //Carrito de compras.
-Route::get('/cart','CartController@show');
+Route::get('/cart','CartController@index');

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 
+use App\User;
+
+
 class CartController extends Controller
 {
     /**
@@ -14,7 +17,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+      $carts = new Cart;
+
+        dd($carts->usuario);
     }
 
     /**
@@ -46,7 +51,13 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        return view('cart');
+
+        //$cart = new Cart;
+
+      //  if()$usuario){
+
+        //}
+        //return view('cart');
     }
 
     /**
