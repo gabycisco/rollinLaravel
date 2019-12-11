@@ -48,7 +48,7 @@
              <input id="avatar" type="file" name="avatar" value="">
             </div>
             
-            <form action="/UserController/perfilDestroy" method="post">
+            <form  method="">
               {{csrf_field()}}
               <input type="hidden" name="id" value="{{$users->id}}">
               <input class="BOTONROJO botonPerfil" type="submit" name="" value="Eliminar">
