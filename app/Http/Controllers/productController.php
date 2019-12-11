@@ -7,24 +7,25 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+  //STORE
     function listado(){
-      $products = Product::all();
-    //  dd($product);
+      $products = Product::paginate(15);
+      //  dd($product);
       $vac = compact('products');
-      return view('store',$vac);
+      return view('store/index',$vac);
     }
 
     function detalle ($id){
       $products = Product::find($id);
       $vac = compact('products');
-      return view('detail',$vac);
+      return view('store/detail',$vac);
     }
 
 
 
-    //Administrador de Artículos
+    //ADMINISTRADOR DE ARTÍCULOS
     function adminIndex(){
-      $products = Product::all();
+      $products = Product::paginate(2);
       $vac = compact('products');
 
       return view('adminProducts/index',$vac);

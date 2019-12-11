@@ -63,6 +63,9 @@
                     <h4>Todavía no hay cargado ningún artículo.</h4>
                 </div>
             @endforelse
+            <div class="contenedorPaginacion">
+                {{$products->links()}}
+            </div>
         </article>
     </div>
 </div>

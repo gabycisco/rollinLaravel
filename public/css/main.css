@@ -19,6 +19,19 @@
   src:url(../fonts/Futura-CondensedLight.otf);
 }
 
+/* PAGINACIÓN DE TODO EL SITIO{ */
+.pagination{
+    align-self:center;
+}
+.pagination a,.pagination li{
+    font-size:12px;
+}
+.contenedorPaginacion{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .principalFondoVideo{
   _width: 100%;
   _height: 100vh;
@@ -242,7 +255,7 @@ header{
 .bienvenidaHome{
   _padding: 30px;
   margin-top: 150px;
-  height: 100px;
+  height: 130px;
   background-color: rgba(255, 255, 255, 0.719);
   text-align: center;
   justify-content: center;
@@ -702,10 +715,7 @@ footer .logo p{
 .productTitle,.productPrice{
   font-size:20px;
 }
-.productImg img{
-  width:100px;
-  background: white;
-}
+
 h1{
   color: #E8D8BE;
   text-align: left;
@@ -736,9 +746,11 @@ h1{
 .productTitle,.productPrice{
   font-size:20px;
 }
-.productImg img{
-  width:100px;
+.productImg{
   background: white;
+}
+.productImg img{
+  width:100%;
 }
 h1{
   color: #E8D8BE;

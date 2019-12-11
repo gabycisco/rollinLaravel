@@ -48,10 +48,7 @@ Route::get('/graciasContacto', function(){
     return view ('graciasContacto');
 });
 
-//RUTA GRACIAS POR COMPRA
-Route::get('/graciasCompra', function(){
-    return view ('graciasCompra');
-});
+
 
 //RUTAS NEWSLETTER
 Route::get('/NLEnviado', 'SubscriberController@create');
@@ -70,16 +67,21 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/store','ProductController@listado');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/detail/{id}',"ProductController@detalle");
-
-
+//RUTAS STORE
+    // LISTAR Y DETALLE DE ARTÍCULOS
+    Route::get('/store','ProductController@listado');
+    Route::get('/store/detail/{id}',"ProductController@detalle");
+    
+    //RUTA GRACIAS POR COMPRA
+    Route::get('/graciasCompra', function(){
+        return view ('store/graciasCompra');
+    });
 
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS
