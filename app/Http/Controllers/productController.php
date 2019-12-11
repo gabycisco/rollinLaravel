@@ -13,6 +13,7 @@ class ProductController extends Controller
       $vac = compact('products');
       return view('store',$vac);
     }
+
     function detalle ($id){
       $products = Product::find($id);
       $vac = compact('products');
@@ -28,14 +29,19 @@ class ProductController extends Controller
 
       return view('adminProducts/index',$vac);
     }
+    function adminDetail ($id){
+      $product = Product::find($id);
+      $vac = compact('product');
+      return view('adminProducts/detail',$vac);
+    }
+ 
     function adminEdit ($id){
       $product = Product::find($id);
       $vac = compact('product');
       return view('adminProducts/edit',$vac);
     }
 
-    public function AdminDestroy(Request $formulario)
-    {
+    public function AdminDestroy(Request $formulario){
       $id=$formulario["id"];
       $product = Product::find($id);
 
@@ -43,13 +49,9 @@ class ProductController extends Controller
       return redirect("admin");
     }
 
-    public function create (Request $formulario)
-    {
+    public function create (Request $formulario){
       $path = $formulario -> file("imgProd") -> store("public");
       $nombreArchivo=basename($path);
-     
-
-
 
       $NewProduct = new Product();
       $NewProduct->img = $nombreArchivo;
@@ -57,9 +59,35 @@ class ProductController extends Controller
       $NewProduct->description = $formulario["description"];
       $NewProduct->price = $formulario["price"];
       $NewProduct->brand_id = $formulario["brand_id"];
-
-
       $NewProduct->save();
+
       return redirect("admin");
     }
+
+    public function update (Request $formulario){
+      $id=$formulario["id"];
+      $product = Product::find($id);
+      
+      if($formulario->hasfile('imgProd')){
+        
+        $formulario->validate([
+        'imgProd' => 'file',
+        ]);
+        $path = $formulario -> file("imgProd") -> store("public");
+        $nombreArchivo=basename($path);
+        $product->img = $nombreArchivo;
+      } 
+      
+      $product->name = $formulario["name"];
+      $product->description = $formulario["description"];
+      $product->price = $formulario["price"];
+      $product->brand_id = $formulario["brand_id"];
+      $product->save();
+
+      $vac = compact('product');
+      return view('adminProducts/detail',$vac); 
+    }
+
 }
+
+

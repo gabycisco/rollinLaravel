@@ -1,41 +1,49 @@
+
 @extends("plantilla")
 @section("titulo_page")
-    Administrador de artículos | Rollin
+    Detalle de artículo | Rollin
 @endsection
 @section("principal")
 <div class="row ">
-    <div class="col-10 offset-1 editContainer row">
-        <div class="col-10">
-            <h1>ADMINISTRADOR DE ARTÍCULOS</h1>
-        </div>
-        <div class="button-contactoClaro col-1 offset-1">
-            <a href="/admin/create">Agregar</a>
+    <div class="col-10 offset-1 adminProductContainer row">
+        <div class="col-12">
+            <h1>DETALLE DEL ARTÍCULO</h1>
         </div>
         <article class="col-12">
-            @forelse ($products as $product)
                 <section class="row">
                     <div class="productImg col-2">
-                        <a href="/admin/edit/{{$product->id}}"><img src="/storage/{{$product->img}}" alt="{{$product->name}}"></a>
+                      <img src="/storage/{{$product->img}}" alt="{{$product->name}}">
                     </div>
                     <div class="col-8 row">
                         <div class="productTitle col-12">
-                            <a href="/admin/edit/{{$product->id}}"> <h3>{{$product->name}}</h3></a>                        </div>    
+                            <h3>{{$product->name}}</h3>
+                        </div>
                         <div class="productBrand col-12">
-                            <a href="/admin/edit/{{$product->id}}"> <p>Marca: {{$product->brand_id}}</p></a>
+                            <p>Marca: {{$product->brand_id}}</p>
+                        </div>
+                        <div class="productDescription col-12">
+                            <p>Detalle:</p>
+                          <p>{!!nl2br($product->description)!!}</p>
                         </div>
                         <div class="productPrice col-12">
-                            <a href="/admin/edit/{{$product->id}}"> <p>$ {{$product->price}}</p></a>
+                           <p>$ {{$product->price}}</p>
                         </div>
                     </div>
                     <div class="col-2 row">
                         <div class="button-contacto col-12">
-                            <a href="/admin/detail/{{$product->id}}">Detalle</a>                        
+                        <a href="/admin/edit/{{$product->id}}">Modificar</a>  
                         </div>
                         <button type="button" class="btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
+                        <div class="button-contacto col-12">
+                        <a href="/admin">Volver</a>  
+                        </div>
                     </div>
                 </section>
-                <!-- Modal de Confirmación -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </article>
+    </div>
+</div>
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -57,17 +65,4 @@
                         </div>
                     </div>
                 </div>
-            @empty
-                <div class="editsEmpty">
-                    <img src="/img/no-products.png" width="70px" alt="">
-                    <h4>Todavía no hay cargado ningún artículo.</h4>
-                </div>
-            @endforelse
-        </article>
-    </div>
-</div>
-
-
-
-
 @endsection

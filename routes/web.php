@@ -81,15 +81,20 @@ Route::get('/detail/{id}',"ProductController@detalle");
 
 
 
-//Admin
-Route::get('/admin','ProductController@adminIndex');
-Route::get('/admin/create', function () {
-    return view('adminProducts/create');
-});
-Route::post('/admin/create','ProductController@create');
-
-
-Route::get('/admin/edit/{id}',"ProductController@adminEdit");
-Route::post('/admin/destroy','ProductController@adminDestroy');
-Route::get('/brands','BrandController@index');
-
+//RUTAS ADMIN
+    // LISTAR Y DETALLE DE ARTÍCULOS
+    Route::get('/admin','ProductController@adminIndex');
+    Route::get('/admin/detail/{id}',"ProductController@adminDetail");
+    
+    // CREAR
+    Route::get('/admin/create', function () {
+        return view('adminProducts/create');
+    });
+    Route::post('/admin/create','ProductController@create');
+    
+    // EDITAR
+    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
+    Route::post('/admin/edit/{id}','ProductController@update');
+    
+    // ELIMINAR
+    Route::post('/admin/destroy','ProductController@adminDestroy');

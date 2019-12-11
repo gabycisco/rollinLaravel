@@ -188,6 +188,27 @@ header{
   text-shadow: 2px 2px 2px #EF3E3A;
 }
 
+
+.buttonModalOk{
+  background-color: #3A3539;
+  border-radius: 10px;
+  display: flex;
+  _width:20%;
+  height: 50px;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color:#E8D8BE;
+  _text-color:E8D8BE;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  font-family: futurabook;
+  _font-family: futuralightc;
+  text-shadow: 2px 2px 2px #EF3E3A;
+}
+
 .button-contacto input{
   color:#E8D8BE;
   font-size: 18px;
@@ -656,6 +677,88 @@ footer .logo p{
     padding-left: 15px;
   }
 /* FIN - PERFIL */
+
+
+/* TODO ADMIN */
+
+.adminProductContainer{
+  background: #3A3539;
+  padding: 35px 35px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.adminProductContainer section{
+  margin-bottom:16px;
+  background:white;
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 20px;
+}
+.productTitle,.productPrice{
+  font-size:20px;
+}
+.productImg img{
+  width:100px;
+  background: white;
+}
+h1{
+  color: #E8D8BE;
+  text-align: left;
+  font-size: 3em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+}
+
+.editContainer{
+  background: #3A3539;
+  padding: 35px 35px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editContainer section{
+  margin-bottom:16px;
+  background:white;
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px;
+}
+.productTitle,.productPrice{
+  font-size:20px;
+}
+.productImg img{
+  width:100px;
+  background: white;
+}
+h1{
+  color: #E8D8BE;
+  text-align: left;
+  font-size: 3em;
+  font-family: futuralightc;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #EF3E3A;
+}
+.editsEmpty{
+  margin-bottom:16px;
+  background:white;
+  border-radius: 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px;
+  height:200px;
+}
+
 
 @media (max-width: 768px) {
   footer h5, footer .logo p, footer .logo h5, footer .listas ul li, footer a{
