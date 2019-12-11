@@ -30,8 +30,9 @@ Route::get('/login', function () {
 
 //RUTAS PERFIL
 Route::get('/perfil/{id}', 'UserController@verUsuario');
-Route::get('/editarPerfil/{id}', 'UserController@modificarDatos');
+Route::get('/editarPerfil/{id}', 'UserController@tomarDatos');
 Route::post('/editarPerfil/{id}', 'UserController@modificarDatos');
+Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
 
 //RUTAS MOCHILA
 Route::get('/mochila', function () {
@@ -42,10 +43,16 @@ Route::get('/mochila', function () {
 Route::get('/formularioEnviado', 'ContactController@create');
 Route::post('/formularioEnviado', 'ContactController@create');
 
-//RUTA GRACIAS
-Route::get('/gracias', function(){
-    return view ('gracias');
+//RUTA GRACIAS CONTACTO
+Route::get('/graciasContacto', function(){
+    return view ('graciasContacto');
 });
+
+
+
+//RUTAS NEWSLETTER
+Route::get('/NLEnviado', 'SubscriberController@create');
+Route::post('/NLEnviado', 'SubscriberController@create');
 
 Route::get('/registro', function () {
     return view('registro');
@@ -60,28 +67,56 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/store','ProductController@listado');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/detail/{id}',"ProductController@detalle");
+//RUTAS STORE
+    // LISTAR Y DETALLE DE ARTÍCULOS
+    Route::get('/store','ProductController@listado');
+    Route::get('/store/detail/{id}',"ProductController@detalle");
+
+    //RUTA GRACIAS POR COMPRA
+    Route::get('/graciasCompra', function(){
+        return view ('store/graciasCompra');
+    });
+
+//RUTAS ADMIN
+    // LISTAR Y DETALLE DE ARTÍCULOS
+    Route::get('/admin','ProductController@adminIndex');
+    Route::get('/admin/detail/{id}',"ProductController@adminDetail");
+
+    // CREAR
+    Route::get('/admin/create', function () {
+        return view('adminProducts/create');
+    });
+    Route::post('/admin/create','ProductController@create');
+
+    // EDITAR
+    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
+    Route::post('/admin/edit/{id}','ProductController@update');
+
+    // ELIMINAR
+    Route::post('/admin/destroy','ProductController@adminDestroy');
+
+
+    Route::get('/detail/{id}',"ProductController@detalle");
 
 
 
-//Admin
-Route::get('/admin','ProductController@adminIndex');
-Route::get('/admin/create', function () {
-    return view('adminProducts/create');
-});
-Route::post('/admin/create','ProductController@create');
+    //Admin
+    Route::get('/admin','ProductController@adminIndex');
+    Route::get('/admin/create', function () {
+        return view('adminProducts/create');
+    });
+    Route::post('/admin/create','ProductController@create');
 
 
-Route::get('/admin/edit/{id}',"ProductController@adminEdit");
-Route::post('/admin/destroy','ProductController@adminDestroy');
-Route::get('/brands','BrandController@index');
+    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
+    Route::post('/admin/destroy','ProductController@adminDestroy');
+    Route::get('/brands','BrandController@index');
 
-//Carrito de compras.
-Route::get('/cart','CartController@index');
+    //Carrito de compras.
+    Route::get('/cart','CartController@index');

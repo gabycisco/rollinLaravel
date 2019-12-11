@@ -17,6 +17,6 @@ class ContactController extends Controller
       $NewContact->message = $formulario["mensaje"];
 
       $NewContact->save();
-      return redirect("gracias");
+      return redirect("graciasContacto");
     }
 }

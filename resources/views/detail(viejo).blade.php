@@ -13,7 +13,7 @@
   <img src="{{$products->img}}" alt="" width="500px">
 </div>
 <div class="">
-<h1>$ {{$products->precio}} Contado</h1>
+<h1>$ {{$products->precio}} Contado</h1>  
 </div>
 
 
