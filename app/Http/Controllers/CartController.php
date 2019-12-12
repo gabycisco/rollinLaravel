@@ -21,12 +21,10 @@ class CartController extends Controller
      */
     public function index()
     {
-        $user_id=Auth::user()->id;
-        $cart = Cart::all();
-        $product = Cart_Product::all();
-        $vac = compact('cart','product','user_id');    
-        
-        return view('store/cart', $vac);
+      $carts = new Cart;
+      $user_id=Auth::user()->id;
+
+        //dd($carts->usuario);
     }
 
     /**
@@ -75,6 +73,9 @@ class CartController extends Controller
         $product = Cart_Product::all();
       //  $productos = Cart_Product::all();
         //$seleccion= $productos->lista;
+
+
+
         $vac = compact('cart','product');
         //dd($cart);
 
@@ -124,7 +125,10 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function add(Reguest $req)
+    {
+
+    }
 
 
-    
 }

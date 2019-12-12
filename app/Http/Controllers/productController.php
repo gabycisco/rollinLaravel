@@ -35,7 +35,7 @@ class ProductController extends Controller
       $vac = compact('product');
       return view('adminProducts/detail',$vac);
     }
- 
+
     function adminEdit ($id){
       $product = Product::find($id);
       $vac = compact('product');
@@ -59,7 +59,7 @@ class ProductController extends Controller
         'price'=>"numeric|required|min:0",
         'imgProd'=>"image|required",
       ];
-      
+
       $mensajes=[
         'string'=> "Sólo puede ingresar texto",
         'required'=> "Este campo es obligatorio",
@@ -87,17 +87,17 @@ class ProductController extends Controller
     public function update (Request $formulario){
       $id=$formulario["id"];
       $product = Product::find($id);
-      
+
       if($formulario->hasfile('imgProd')){
-        
+
         $formulario->validate([
         'imgProd' => 'file',
         ]);
         $path = $formulario -> file("imgProd") -> store("public");
         $nombreArchivo=basename($path);
         $product->img = $nombreArchivo;
-      } 
-      
+      }
+
       $product->name = $formulario["name"];
       $product->description = $formulario["description"];
       $product->price = $formulario["price"];
@@ -105,10 +105,13 @@ class ProductController extends Controller
       $product->save();
 
       $vac = compact('product');
-      return view('adminProducts/detail',$vac); 
+      return view('adminProducts/detail',$vac);
+    }
+    public function agregarAlCarrito(Request $datoProducto, $id){
+      $producto = Producto::find($id);
+    }
+    public function addCart($id){
+      return view('mochilla',$id);
     }
 
 }
-
-
-
