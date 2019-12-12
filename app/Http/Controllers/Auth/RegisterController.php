@@ -65,9 +65,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   $req = request();
+    
+        if($req->hasfile("avatar")){
+
         $ruta = $req->file("avatar")->store("public");
-
-
+    
          return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
@@ -76,4 +78,14 @@ class RegisterController extends Controller
             'avatar' => basename($ruta),
         ]);
     }
-}
+    else {
+        return User::create([
+            'name' => $data['name'],
+            'surname' => $data['surname'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+    }
+    }
+};
