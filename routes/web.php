@@ -116,3 +116,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     // ELIMINAR
     Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin','auth');
+
+    Route::get('/add-cart/{id}', 'ProductController@addCart')->middleware('admin','auth');;

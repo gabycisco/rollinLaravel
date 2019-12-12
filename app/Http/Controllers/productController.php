@@ -110,4 +110,8 @@ class ProductController extends Controller
     public function agregarAlCarrito(Request $datoProducto, $id){
       $producto = Producto::find($id);
     }
+    public function addCart($id){
+      return view('mochilla',$id);
+    }
+
 }
