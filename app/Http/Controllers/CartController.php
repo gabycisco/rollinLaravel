@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use Auth;
+use Session;
 
 use App\Cart_Product;
 
@@ -31,9 +32,21 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $formulario)
+    {    
+        
+        $user_id=Auth::user();
+        $carritoID = Cart::where('user_id','=',$user_id["id"])->get();
+
+        $NewProduct = new Cart_Product();      
+        
+        $NewProduct->cart_id= $carritoID["id"];
+        $NewProduct->product_id=$formulario["product_id"];
+        $NewProduct->quantity=$formulario["quantity"];
+        $NewProduct->price=$formulario["price"];
+
+        $NewProduct->save();
+        return redirect("store");       
     }
 
     /**

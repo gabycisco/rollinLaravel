@@ -77,12 +77,22 @@ color:#3A3539;
 nav {
   text-align: center;
   color: #E8D8BE!important;
+  display: inline-flex;
+  flex-direction: row;
 }
 nav a{
   text-align: center;
   color: #E8D8BE!important;
   font-family:futuralightc;
   font-size: 25px;
+}
+
+.saludo{
+
+  color: #E8D8BE!important;
+  text-shadow: 2px 2px 2px #EF3E3A;
+
+
 }
 .navbar-toggler {
   background-color: #3A3539!important;
@@ -92,6 +102,11 @@ nav a{
 }
 .navbar-dark {
   background-color: #3A3539!important;
+}
+
+.nav-item {
+  display: inline-flex;
+  flex-direction: row;
 }
 
 header{

@@ -27,6 +27,7 @@ $navItems =
           <?php foreach ($navItems as $item) :?>
             <?php if (Auth::user() != null): ?>
               <li class="nav-item">
+<<<<<<< HEAD
                 <p >Bienvenido, {{Auth::user()->name}} </p>
                 if(){
 
@@ -40,8 +41,17 @@ $navItems =
                 <p>
                   <a href="/logout" class="nav-link">Cerrar sesión</a>
                 </p>
+=======
+                <!-- <h3 class="nav-link">Bienvenido, {{Auth::user()->name}} </h3> -->
+                <a href="/perfil/{{Auth::user()->id}}" class="nav-link saludo">Bienvenido, {{Auth::user()->name}}</a>
               </li>
-
+              <li class="nav-item">
+              <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>
+              </li>
+              <li class="nav-item">
+                <a href="/logout" class="nav-link">Cerrar sesión</a>
+>>>>>>> 1f4441a2efe70d2f1dc67df4bbcec4184b680c1b
+              </li>
               <?php break;?>
             <?php else: ?>
               <li class="nav-item">

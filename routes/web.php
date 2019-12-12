@@ -96,8 +96,8 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/cart/show/', 'CartController@show' );
 
     //AGREGAR AL CARRITO
-    Route::post('/cart/create','CartProductController@create')->middleware('auth');
-
+    Route::post('/mochila/add','CartProductController@create')->middleware('auth');
+    // Route::post('/mochila/add','CartProductController@add')->middleware('auth');
 
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS

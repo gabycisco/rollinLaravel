@@ -26,12 +26,24 @@ $navItems =
         <ul class="nav navbar-nav ml-auto">
           <?php foreach ($navItems as $item) :?>
             <?php if (isset($_SESSION["username"])): ?>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <p >Bienvenido, <?=$_SESSION["username"]?></p>
                 <p>
                   <a href="cerrar_sesion.php" class="nav-link">Cerrar sesión</a>
                 </p>
+              </li> -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="<?=$item['url']?>">
+                  <?= $item["name"]?>
+                </a>
               </li>
+              <!-- <li class="nav-item">
+                <p >Bienvenido, <?=$_SESSION["username"]?></p>
+              </li>
+              <li class="nav-item">
+              <a href="cerrar_sesion.php" class="nav-link">Cerrar sesión</a>
+              </li> -->
 
               <?php break;?>
             <?php else: ?>
