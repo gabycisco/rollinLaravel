@@ -28,9 +28,15 @@ $navItems =
             <?php if (Auth::user() != null): ?>
               <li class="nav-item">
                 <p >Bienvenido, {{Auth::user()->name}} </p>
+                if(){
+
+                }
                 <p>
                 <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>
                 </p>
+                if(){
+
+                }
                 <p>
                   <a href="/logout" class="nav-link">Cerrar sesión</a>
                 </p>
