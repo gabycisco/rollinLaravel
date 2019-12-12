@@ -79,15 +79,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //RUTAS STORE
     // LISTAR Y DETALLE DE ARTÍCULOS
-<<<<<<< HEAD
-    Route::get('/store','ProductController@listado');
-    Route::get('/store/detail/{id}',"ProductController@detalle");
-
-=======
     Route::get('/store','ProductController@listado')->middleware('auth');
     Route::get('/store/detail/{id}',"ProductController@detalle")->middleware('auth');
     
->>>>>>> 6c3a1378f975464625464f9355ceeba0e127cfdd
     //RUTA GRACIAS POR COMPRA
     Route::get('/graciasCompra', function(){
         return view ('store/graciasCompra');
@@ -95,57 +89,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS
-<<<<<<< HEAD
-    Route::get('/admin','ProductController@adminIndex');
-    Route::get('/admin/detail/{id}',"ProductController@adminDetail");
-
-    // CREAR
-    Route::get('/admin/create', function () {
-        return view('adminProducts/create');
-    });
-    Route::post('/admin/create','ProductController@create');
-
-    // EDITAR
-    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
-    Route::post('/admin/edit/{id}','ProductController@update');
-
-    // ELIMINAR
-    Route::post('/admin/destroy','ProductController@adminDestroy');
-
-
-    Route::get('/detail/{id}',"ProductController@detalle");
-
-
-
-    //Admin
-    Route::get('/admin','ProductController@adminIndex');
-    Route::get('/admin/create', function () {
-        return view('adminProducts/create');
-    });
-    Route::post('/admin/create','ProductController@create');
-
-
-    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
-    Route::post('/admin/destroy','ProductController@adminDestroy');
-    Route::get('/brands','BrandController@index');
-
-    //Carrito de compras.
-    Route::get('/cart','CartController@index');
-    Route::get('/cart/show/', 'CartController@show' );
-=======
-    Route::get('/admin','ProductController@adminIndex')->middleware('admin');
-    Route::get('/admin/detail/{id}',"ProductController@adminDetail")->middleware('admin');
+    Route::get('/admin','ProductController@adminIndex')->middleware('admin','auth');
+    Route::get('/admin/detail/{id}',"ProductController@adminDetail")->middleware('admin','auth');
     
     // CREAR
     Route::get('/admin/create', function () {
         return view('adminProducts/create');
-    })->middleware('admin');
-    Route::post('/admin/create','ProductController@create')->middleware('admin');
+    })->middleware('admin','auth');
+    Route::post('/admin/create','ProductController@create')->middleware('admin','auth');
     
     // EDITAR
-    Route::get('/admin/edit/{id}',"ProductController@adminEdit")->middleware('admin');
-    Route::post('/admin/edit/{id}','ProductController@update')->middleware('admin');
+    Route::get('/admin/edit/{id}',"ProductController@adminEdit")->middleware('admin','auth');
+    Route::post('/admin/edit/{id}','ProductController@update')->middleware('admin','auth');
     
     // ELIMINAR
-    Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin');
->>>>>>> 6c3a1378f975464625464f9355ceeba0e127cfdd
+    Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin','auth');
