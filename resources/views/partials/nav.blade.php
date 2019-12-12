@@ -27,7 +27,8 @@ $navItems =
           <?php foreach ($navItems as $item) :?>
             <?php if (Auth::user() != null): ?>
               <li class="nav-item">
-                <h3 class="nav-link">Bienvenido, {{Auth::user()->name}} </h3>
+                <!-- <h3 class="nav-link">Bienvenido, {{Auth::user()->name}} </h3> -->
+                <a href="/perfil/{{Auth::user()->id}}" class="nav-link saludo">Bienvenido, {{Auth::user()->name}}</a>
               </li>
               <li class="nav-item">
               <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>

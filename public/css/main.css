@@ -84,6 +84,14 @@ nav a{
   font-family:futuralightc;
   font-size: 25px;
 }
+
+.saludo{
+
+  color: #E8D8BE!important;
+  text-shadow: 2px 2px 2px #EF3E3A;
+
+
+}
 .navbar-toggler {
   background-color: #3A3539!important;
 }
