@@ -27,7 +27,7 @@
           <p>Teléfono: {{$users->phone}}</p>
           <br><br>
           <div class="BOTONROJO botonPerfil">
-            <a href="/editarPerfil/{id}">EDITAR DATOS</a>
+          <a href="/editarPerfil/{{$users->id}}">EDITAR DATOS</a>
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="#">VER COMPRAS</a>

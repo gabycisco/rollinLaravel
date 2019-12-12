@@ -29,6 +29,9 @@ $navItems =
               <li class="nav-item">
                 <p >Bienvenido, {{Auth::user()->name}} </p>
                 <p>
+                <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>
+                </p>
+                <p>
                   <a href="/logout" class="nav-link">Cerrar sesión</a>
                 </p>
               </li>
