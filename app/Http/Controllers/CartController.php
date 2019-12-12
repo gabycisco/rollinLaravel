@@ -6,6 +6,7 @@ use App\Cart;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Cart_Product;
 
 
 class CartController extends Controller
@@ -52,8 +53,14 @@ class CartController extends Controller
     public function show(Cart $cart)
     {
 
-        //$cart = new Cart;
+        $cart = Cart::all();
+        $product = Cart_Product::all();
+      //  $productos = Cart_Product::all();
+        //$seleccion= $productos->lista;
+        $vac = compact('cart','product');
+        //dd($cart);
 
+        return view('store/cart', $vac);
       //  if()$usuario){
 
         //}

@@ -24,10 +24,10 @@
         <section class="col-lg-7 col-xs-12">
         <br>
         <br>
-
-          <h3>NOMBRE PRODUCTO {{}}</h3>
+          {{$cart[2]->id}}
+          <h3>Usuario{{$cart[2]->usuario->name}}</h3>
           <br>
-          <p>DESCRIPCION PRODUCTO</p>
+          <p>Producto: {{$product[1]->id}}</p>
           <p>PRECIO </p>
           <p>CANTIDAD</p>
           <br>

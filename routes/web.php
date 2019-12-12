@@ -120,3 +120,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     //Carrito de compras.
     Route::get('/cart','CartController@index');
+    Route::get('/cart/show/', 'CartController@show' );
