@@ -28,6 +28,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
+//RUTA LOGOUT
+Route::get('/logout','\App\Http\Controllers\Auth\LoginController@logout');
+
 //RUTAS PERFIL
 Route::get('/perfil/{id}', 'UserController@verUsuario');
 Route::get('/editarPerfil/{id}', 'UserController@tomarDatos');
