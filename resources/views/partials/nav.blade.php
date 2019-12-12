@@ -25,11 +25,14 @@ $navItems =
 
         <ul class="nav navbar-nav ml-auto">
           <?php foreach ($navItems as $item) :?>
-            <?php if (isset($_SESSION["username"])): ?>
+            <?php if (Auth::user() != null): ?>
               <li class="nav-item">
-                <p >Bienvenido, <?=$_SESSION["username"]?></p>
+                <p >Bienvenido, {{Auth::user()->name}} </p>
                 <p>
-                  <a href="cerrar_sesion.php" class="nav-link">Cerrar sesión</a>
+                <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>
+                </p>
+                <p>
+                  <a href="/logout" class="nav-link">Cerrar sesión</a>
                 </p>
               </li>
 
@@ -44,7 +47,11 @@ $navItems =
 
           <?php endforeach ;?>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+<<<<<<< HEAD
+            <a class="nav-link" href="/cart">
+=======
+            <a class="nav-link" href='/mochila'>
+>>>>>>> 6c3a1378f975464625464f9355ceeba0e127cfdd
               <img src="/img/vector_mochila.png" width="30px" id="logo">
             </a>
           </li>
