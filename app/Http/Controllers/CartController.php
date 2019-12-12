@@ -20,7 +20,7 @@ class CartController extends Controller
     {
       $carts = new Cart;
 
-        dd($carts->usuario);
+        //dd($carts->usuario);
     }
 
     /**
@@ -57,6 +57,9 @@ class CartController extends Controller
         $product = Cart_Product::all();
       //  $productos = Cart_Product::all();
         //$seleccion= $productos->lista;
+
+
+
         $vac = compact('cart','product');
         //dd($cart);
 

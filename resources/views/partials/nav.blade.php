@@ -47,11 +47,8 @@ $navItems =
 
           <?php endforeach ;?>
           <li class="nav-item">
-<<<<<<< HEAD
+
             <a class="nav-link" href="/cart">
-=======
-            <a class="nav-link" href='/mochila'>
->>>>>>> 6c3a1378f975464625464f9355ceeba0e127cfdd
               <img src="/img/vector_mochila.png" width="30px" id="logo">
             </a>
           </li>

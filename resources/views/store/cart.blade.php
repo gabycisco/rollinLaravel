@@ -24,11 +24,11 @@
         <section class="col-lg-7 col-xs-12">
         <br>
         <br>
-          {{$cart[2]->id}}
-          <h3>Usuario{{$cart[2]->usuario->name}}</h3>
+          {{$cart[1]->id}}
+          <h3>Usuario: {{ $cart[1]->usuario->name}}</h3>
           <br>
-          <p>Producto: {{$product[1]->id}}</p>
-          <p>PRECIO </p>
+          <p>Id de Cart Product: {{$product[0]->carrito[0]->carrito}}</p>
+          <p>PRECIO {{$product[0]->producto->name}}</p>
           <p>CANTIDAD</p>
           <br>
           <div class="BOTONROJO botonPerfil1">

@@ -11,6 +11,13 @@ class Cart_Product extends Model
   //    return Cart_Product::all();
     //  $Cart_Product = Cart_Product::all();
     //  $vac = compact('Cart_Product');
-    //  return $vac;
-    
+    //  return $vac;\
+    public function producto(){
+      return $this->belongsTo("App\Product","product_id");
+
+    }
+    public function carrito(){
+      return $this->hasMany("App\Cart","id");
+
+    }
 }

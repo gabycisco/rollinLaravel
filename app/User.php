@@ -43,4 +43,7 @@ class User extends Authenticatable
   //  public function cart(){
     //  return $this->belongsTo("App\Cart","user_id",);
   //  }
+  public function carrito() {
+      return $this->belongsTo("App\Cart","id");
+  }
 }
