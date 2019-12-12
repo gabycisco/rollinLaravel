@@ -25,11 +25,11 @@ $navItems =
 
         <ul class="nav navbar-nav ml-auto">
           <?php foreach ($navItems as $item) :?>
-            <?php if (isset($_SESSION["username"])): ?>
+            <?php if (Auth::user() != null): ?>
               <li class="nav-item">
-                <p >Bienvenido, <?=$_SESSION["username"]?></p>
+                <p >Bienvenido, {{Auth::user()->name}} </p>
                 <p>
-                  <a href="cerrar_sesion.php" class="nav-link">Cerrar sesión</a>
+                  <a href="/logout" class="nav-link">Cerrar sesión</a>
                 </p>
               </li>
 
