@@ -90,6 +90,16 @@ Route::get('/home', 'HomeController@index')->name('home');
         return view ('store/graciasCompra');
     })->middleware('auth');
 
+
+//CARRITO DE COMPRAS
+    Route::get('/mochila','CartController@index')->middleware('auth');
+    Route::get('/cart/show/', 'CartController@show' );
+
+    //AGREGAR AL CARRITO
+    Route::post('/cart/create','CartProductController@create')->middleware('auth');
+
+
+
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS
     Route::get('/admin','ProductController@adminIndex')->middleware('admin');
@@ -108,24 +118,11 @@ Route::get('/home', 'HomeController@index')->name('home');
     // ELIMINAR
     Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin');
 
-    Route::get('/detail/{id}',"ProductController@detalle");
+    // Route::get('/detail/{id}',"ProductController@detalle");
 
 
-    //Admin
-    Route::get('/admin','ProductController@adminIndex');
-    Route::get('/admin/create', function () {
-        return view('adminProducts/create');
-    });
-    Route::post('/admin/create','ProductController@create');
 
 
-    Route::get('/admin/edit/{id}',"ProductController@adminEdit");
-    Route::post('/admin/destroy','ProductController@adminDestroy');
-    Route::get('/brands','BrandController@index');
-
-    //Carrito de compras.
-    Route::get('/cart','CartController@index');
-    Route::get('/cart/show/', 'CartController@show' );
 
     
 

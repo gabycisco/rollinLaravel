@@ -58,14 +58,4 @@ class UserController extends Controller
     //   return redirect("/");
     // }
 
-    public function perfilDestroy(Request $formulario){
-        $id=$formulario["id"];
-
-        $user = User::find($id);
-        dd($user)
-
-        $user->delete();
-        return redirect("/");
-      }
-
 }

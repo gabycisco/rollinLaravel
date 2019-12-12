@@ -22,19 +22,7 @@
         </section>
 
         <section class="col-lg-7 col-xs-12">
-        <br>
-        <br>
-          {{$cart[2]->id}}
-          <h3>Usuario{{$cart[2]->usuario->name}}</h3>
-          <br>
-          <p>Producto: {{$product[1]->id}}</p>
-          <p>PRECIO </p>
-          <p>CANTIDAD</p>
-          <br>
-          <div class="BOTONROJO botonPerfil1">
-            <a href="#">COMPRAR</a>
-          </div>
-
+            
         </section>
 
       </div>
