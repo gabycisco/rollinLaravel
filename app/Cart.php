@@ -20,4 +20,8 @@ class Cart extends Model
     public function products(){
         return $this->belongsToMany("App\Product", "cart_product","cart_id", "producto_id");
     }
+
+    public function sale(){
+        return $this->belongsTo("App\Sale","cart_id");
+    }
 }
