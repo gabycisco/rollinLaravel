@@ -35,7 +35,10 @@ Route::get('/logout','\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/perfil/{id}', 'UserController@verUsuario')->middleware('auth');
 Route::get('/editarPerfil/{id}', 'UserController@tomarDatos')->middleware('auth');
 Route::post('/editarPerfil/{id}', 'UserController@modificarDatos')->middleware('auth');
+
+// ELIMINAR
 //Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
+Route::post('/editarPerfil/destroy','UserController@perfilDestroy');
 
 
 //RUTAS MOCHILA
@@ -86,6 +89,15 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/graciasCompra', function(){
         return view ('store/graciasCompra');
     })->middleware('auth');
+
+
+//CARRITO DE COMPRAS
+    Route::get('/mochila','CartController@index')->middleware('auth');
+    Route::get('/cart/show/', 'CartController@show' );
+
+    //AGREGAR AL CARRITO
+    Route::post('/cart/create','CartProductController@create')->middleware('auth');
+
 
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS

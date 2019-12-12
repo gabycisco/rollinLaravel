@@ -16,18 +16,18 @@ class UserController extends Controller
 
 
     function modificarDatos(Request $request){
-        
+
         $user = Auth::user();
 
         if($request->hasfile('avatar')){
-        
+
             $request->validate([
             'avatar' => 'file',
             ]);
 
         $avatarName = $request->file('avatar')->store('public');
         $user->avatar = basename($avatarName);
-    } 
+    }
 
         $user->name = $request["name"];
         $user->surname = $request["surname"];
@@ -36,29 +36,26 @@ class UserController extends Controller
         $user->phone = $request["phone"];
 
         $user->save();
-        
+
         return back();
 
     }
 
-    
+
     function tomarDatos($id){
         $users=User::find($id);
         $vac=compact('users');
-        return view('editarPerfil',$vac);   
-        
-    }
-    
-    public function perfilDestroy(Request $req)
-    {
-      $id=$req["id"];
-      $user = User::find($id);
+        return view('editarPerfil',$vac);
 
-      $user->delete();
-      return redirect("/");
     }
 
-    
+    // public function perfilDestroy(Request $req)
+    // {
+    //   $id=$req["id"];
+    //   $user = User::find($id);
+
+    //   $user->delete();
+    //   return redirect("/");
+    // }
 
 }
-

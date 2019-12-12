@@ -30,8 +30,13 @@
                         </div>
                     </div>
                     <div class="col-2 row">
-                        <div class="button-contacto col-12">
- 
+                        <form action="/cart/create" method="post">
+                            {{csrf_field()}}
+                                <input type="hidden" name="product_id" value="{{$products->id}}">
+                                <input type="hidden" name="quantity" value="1">
+                                <input type="hidden" name="price" value="{{$products->price}}">
+                                <button type="button submit" class="btn buttonModalOk" value="Agregar">Agregar al carrito</button>
+                            </form> 
                         </div>
                     </div>
                 </section>

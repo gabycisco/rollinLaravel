@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Cart;
+use App\Cart_Product;
 use Illuminate\Http\Request;
 
 use App\User;
 use Auth;
 
-use App\Cart_Product;
+use App\Cart;
 
-
-class CartController extends Controller
+class CartProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,12 +19,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $user_id=Auth::user()->id;
-        $cart = Cart::all();
-        $product = Cart_Product::all();
-        $vac = compact('cart','product','user_id');    
-        
-        return view('store/cart', $vac);
+        //
     }
 
     /**
@@ -33,9 +27,19 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $formulario)
+    {    
+        
+        $user_id=Auth::user();
+        $NewProduct = new Cart_Product();      
+        
+        $NewProduct->cart_id="1";
+        $NewProduct->product_id=$formulario["product_id"];
+        $NewProduct->quantity=$formulario["quantity"];
+        $NewProduct->price=$formulario["price"];
+
+        $NewProduct->save();
+        return redirect("store");
     }
 
     /**
@@ -52,33 +56,21 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  \App\Cart_Product  $cart_Product
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show(Cart_Product $cart_Product)
     {
-
-        $cart = Cart::all();
-        $product = Cart_Product::all();
-      //  $productos = Cart_Product::all();
-        //$seleccion= $productos->lista;
-        $vac = compact('cart','product');
-        //dd($cart);
-
-        return view('store/cart', $vac);
-      //  if()$usuario){
-
-        //}
-        //return view('cart');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  \App\Cart_Product  $cart_Product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cart $cart)
+    public function edit(Cart_Product $cart_Product)
     {
         //
     }
@@ -87,10 +79,10 @@ class CartController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cart  $cart
+     * @param  \App\Cart_Product  $cart_Product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cart $cart)
+    public function update(Request $request, Cart_Product $cart_Product)
     {
         //
     }
@@ -98,23 +90,11 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cart  $cart
+     * @param  \App\Cart_Product  $cart_Product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy(Cart_Product $cart_Product)
     {
         //
     }
-
-     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function add(Reguest $req)
-    {
-        
-    }
-
-    
 }
