@@ -59,7 +59,13 @@
                             <label for="img" class="col-12">Imagen</label>
                             <img src="/img/no-photo.png" width="100%" alt="">
                         </div>
-                        
+                        <div>
+                        <ul style='color:red' class='errores'>
+                        @foreach ($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                        </ul>
+                        </div>
                         <form action="/admin/create" method="post" class="col-7 offset-1 row" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <label for="name" class="col-12">Nombre</label>

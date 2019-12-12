@@ -47,7 +47,6 @@ $navItems =
 
           <?php endforeach ;?>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="/cart"> -->
             <a class="nav-link" href='/mochila'>
               <img src="/img/vector_mochila.png" width="30px" id="logo">
             </a>
