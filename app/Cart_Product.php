@@ -11,4 +11,13 @@ class Cart_Product extends Model
 //    public $timestamps = false;
     public $guarded = [];
 
+
+       /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'cart_id','id'
+    ];
 }

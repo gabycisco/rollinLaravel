@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Cart_Product;
-use Illuminate\Http\Request;
-
 use App\User;
-use Auth;
-
+use App\Product;
 use App\Cart;
+use Auth;
+use Illuminate\Http\Request;
+use Session;
+
 
 class CartProductController extends Controller
 {
@@ -31,16 +32,23 @@ class CartProductController extends Controller
     {    
         
         $user_id=Auth::user();
+        $carritoId = Cart::where('user_id','=',$user_id["id"])->get();
+        // dd($carritoId);
+
         $NewProduct = new Cart_Product();      
         
-        $NewProduct->cart_id="1";
+
+        // $NewProduct->cart_id= $carritoId["id"];
+        $NewProduct->cart_id= "1";
         $NewProduct->product_id=$formulario["product_id"];
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
         $NewProduct->save();
-        return redirect("store");
+        return redirect("store");       
     }
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -97,4 +105,6 @@ class CartProductController extends Controller
     {
         //
     }
+
+
 }

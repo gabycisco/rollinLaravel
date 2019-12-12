@@ -24,4 +24,14 @@ class Cart extends Model
     public function sale(){
         return $this->belongsTo("App\Sale","cart_id");
     }
+
+       /**
+    * The attributes that are mass assignable.
+    *
+    * @var array
+    */
+   protected $fillable = [
+       'id'
+   ];
+
 }

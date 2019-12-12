@@ -29,8 +29,9 @@
                            <p>$ {{$products->price}}</p>
                         </div>
                     </div>
+                    
                     <div class="col-2 row">
-                        <form action="/cart/create" method="post">
+                        <form action="/mochila/add" method="post">
                             {{csrf_field()}}
                                 <input type="hidden" name="product_id" value="{{$products->id}}">
                                 <input type="hidden" name="quantity" value="1">
