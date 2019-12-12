@@ -47,17 +47,34 @@
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
-            
-            <form  method="">
-              {{csrf_field()}}
-              <input type="hidden" name="id" value="{{$users->id}}">
-              <input class="BOTONROJO botonPerfil" type="submit" name="" value="Eliminar">
-          </form>
-          
+            <button type="button" class="btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
         </section>
 
       </div>
     </div>
   </div>
+<!-- Modal de Confirmación -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar - Confirmación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <b>¿Está seguro de eliminar el el perdil de {{$users->name}}?</b> <br>
+                Luego de confirmar la operación no será posible recuperar el registro.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn button-contactoClaro" data-dismiss="modal">Cancelar</button>
+                <form action="/editarPerfil/destroy" method="post">
+                    {{csrf_field()}}
+                    <input type="hidden" name="id" value="{{$users->id}}">
+                    <button type="button submit" class="btn buttonModalOk" value="Eliminar">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
   @endsection

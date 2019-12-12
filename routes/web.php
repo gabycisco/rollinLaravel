@@ -29,11 +29,14 @@ Route::get('/login', function () {
 });
 
 //RUTAS PERFIL
-Route::get('/perfil/{id}', 'UserController@verUsuario');
-Route::get('/editarPerfil/{id}', 'UserController@tomarDatos');
-Route::post('/editarPerfil/{id}', 'UserController@modificarDatos');
-//Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
-
+    Route::get('/perfil/{id}', 'UserController@verUsuario');
+    Route::get('/editarPerfil/{id}', 'UserController@tomarDatos');
+    Route::post('/editarPerfil/{id}', 'UserController@modificarDatos');
+    
+    // ELIMINAR
+    //Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
+    Route::post('/editarPerfil/destroy','UserController@perfilDestroy');
+    
 //RUTAS MOCHILA
 Route::get('/mochila', function () {
     return view('cart');
