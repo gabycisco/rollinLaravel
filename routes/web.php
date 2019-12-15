@@ -116,3 +116,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     // ELIMINAR
     Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin');
+
+    //VER LISTAS DE CONTACTO Y NEWSLETTER PARA ADMIN
+    Route::get('/verListaNL','SubscriberController@listado')->middleware('admin');
+    Route::get('/verListaContacto','ContactController@listado')->middleware('admin');

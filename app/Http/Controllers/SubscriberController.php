@@ -30,4 +30,11 @@ class SubscriberController extends Controller
       $NewSubscriber->save();
       return redirect("/");
     }
+
+
+    function listado (){
+      $subscriber = Subscriber::all();
+      $vac = compact('subscriber');
+      return view('verListaNL',$vac);
+    }
 }
