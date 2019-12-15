@@ -21,6 +21,12 @@
         <section class="col-lg-7 col-xs-12">
           <h3>EDITAR DATOS</h3>
           <br>
+          <ul style='color:red' class='errores'>
+            @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+            @endforeach
+          </ul>
+          
           <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <label for="name">Nombre:</label>
