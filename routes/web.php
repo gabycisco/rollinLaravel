@@ -38,7 +38,7 @@ Route::post('/editarPerfil/{id}', 'UserController@modificarDatos')->middleware('
 
 // ELIMINAR
 //Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
-Route::post('/editarPerfil/destroy','UserController@perfilDestroy');
+Route::post('/perfil/destroy','UserController@perfilDestroy');
 
 
 //RUTAS MOCHILA

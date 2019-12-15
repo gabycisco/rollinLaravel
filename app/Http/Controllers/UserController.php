@@ -17,28 +17,6 @@ class UserController extends Controller
 
     function modificarDatos(Request $request){
 
-        $reglas=[
-            'name'=>"string|required|min:3",
-            'surname'=>"string|required|min:3",
-            'email'=>"e-mail|required|min:5",
-            'address'=>"string|min:3",
-            'avatar'=>"image",
-            'phone'=>"numeric",
-
-          ];
-    
-          $mensajes=[
-            'string'=> "Sólo puede ingresar texto",
-            'required'=> "Este campo es obligatorio",
-            'min'=> "Este campo requiere al menos 3 carateres",
-            'unique'=> "Este nombre ya fue utilizado",
-            'numeric'=>"Sólo puede ingresar números",
-            'image'=>"Sólo puede subir archivos .jpg, .jpeg o .png",
-            'e-mail'=>"El formato email no es válido",
-          ];
-          $this->validate($request, $reglas,$mensajes);
-
-
         $user = Auth::user();
 
         if($request->hasfile('avatar')){
@@ -72,11 +50,12 @@ class UserController extends Controller
     }
 
     public function perfilDestroy(Request $req)
-     {
-       $user = Auth::user();
-        $user -> active = 0;
-    
-       return redirect("/");
-     }
+    {
+      $id=$req["id"];
+      $user = User::find($id);
+      Auth::logout();
+        $user->delete();
+        return redirect("/home");
+    }
 
 }
