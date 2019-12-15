@@ -40,16 +40,14 @@
           <br>
           <br>
           <br>
-            <div class="BOTONROJO botonPerfil">
-            <button type="submit">GUARDAR</button>
-            </div>
-            <div class="BOTONROJO botonPerfil">
+        </section>
+        <div class="BOTONROJO botonPerfil">
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
-            
-        </section>
-
+        <div >
+            <button type="submit" class="BOTONROJO botonPerfil" style="border:none">GUARDAR</button>
+            </div>
       </div>
     </div>
   </div>

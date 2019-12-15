@@ -505,6 +505,7 @@ img {
     text-decoration:none;
     margin-right:7px;
     align-self: right;
+    flex-direction:row;
     }
 
   .BOTONROJO a{
