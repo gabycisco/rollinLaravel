@@ -51,10 +51,15 @@
             SUSCRIBITE A NUESTRO NEWSLETTER!</h2>
         </article>
         <article class="formularioNews col-lg-5  col-xs-12 row">
+                <ul style='color:red' class='errores'>
+                    @foreach ($errors->all() as $error)
+                      <li>{{$error}}</li>
+                    @endforeach
+                </ul>
             <form method='POST' action='/NLEnviado' class="col-12 row">
                 {{csrf_field()}}
                 <div class="col-10 offeset-1" style="padding: 0;" >   
-                    <input type="email" class="form-control" placeholder="e-mail" name='email'>
+                    <input type="email" class="form-control" placeholder="e-mail" name='email' value='{{old("email")}}'>
                 </div>
                 <div class="col-1" >
                     <button  type="submit" class="btn">ENVIAR</button>

@@ -21,21 +21,54 @@
         <section class="col-lg-7 col-xs-12">
           <h3>{{$users->name . " ".$users->surname}}</h3>
           <br>
-          <p>Email: {{$users->email}}</p>
+          <p>E-MAIL: {{$users->email}}</p>
 
-          <p>Dirección: {{$users->address}} </p>
-          <p>Teléfono: {{$users->phone}}</p>
+          <p>DIRECCIÓN: {{$users->address}} </p>
+          <p>TELÉFONO: {{$users->phone}}</p>
           <br><br>
-          <div class="BOTONROJO botonPerfil">
+        </section>
+        <div class="BOTONROJO botonPerfil">
           <a href="/editarPerfil/{{$users->id}}">EDITAR DATOS</a>
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="#">VER COMPRAS</a>
           </div>
-        </section>
-
+          <br><br>
+          <!--ACA FALTA LOGICA PARA QUE SI NO ES ADMIN SE OCULTEN LOS BOTONES-->
+          <div class="BOTONROJO botonPerfil">
+            <a href="/verListaNL">VER SUBSC.</a>
+          </div>
+          <div class="BOTONROJO botonPerfil">
+            <a href="/verListaContactos">VER MENSAJES</a>
+          </div>
+          <!--FIN LOGICA-->
+          <br><br><br>
+          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>
     </div>
   </div>
+  <!-- Modal de Confirmación -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Eliminar - Confirmación</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+              <b>¿Está seguro de eliminar el el perdil de {{$users->name}}?</b> <br>
+              Luego de confirmar la operación no será posible recuperar el registro.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn button-contactoClaro" data-dismiss="modal">Cancelar</button>
+              <form action="/perfil/destroy" method="post">
+                  {{csrf_field()}}
+                  <input type="hidden" name="id" value="{{$users->id}}">
+                  <button type="button submit" class="btn buttonModalOk" value="Eliminar">Eliminar</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
 
   @endsection

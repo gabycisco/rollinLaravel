@@ -38,7 +38,7 @@ Route::post('/editarPerfil/{id}', 'UserController@modificarDatos')->middleware('
 
 // ELIMINAR
 //Route::post('/editarPerfil/{id}','UserController@perfilDestroy');
-Route::post('/editarPerfil/destroy','UserController@perfilDestroy');
+Route::post('/perfil/destroy','UserController@perfilDestroy')->middleware('auth');
 
 
 //RUTAS MOCHILA
@@ -116,3 +116,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
     // ELIMINAR
     Route::post('/admin/destroy','ProductController@adminDestroy')->middleware('admin');
+
+    //VER LISTAS DE CONTACTO Y NEWSLETTER PARA ADMIN
+    Route::get('/verListaNL','SubscriberController@listado')->middleware('admin');
+    Route::get('/verListaContactos','ContactController@listado')->middleware('admin');

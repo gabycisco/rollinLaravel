@@ -18,6 +18,7 @@ class UserController extends Controller
     function modificarDatos(Request $request){
 
         $user = Auth::user();
+        $id = Auth::user()->id;
 
         if($request->hasfile('avatar')){
 
@@ -37,7 +38,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return back();
+        return redirect('perfil/'.$id);
 
     }
 
@@ -49,13 +50,13 @@ class UserController extends Controller
 
     }
 
-    // public function perfilDestroy(Request $req)
-    // {
-    //   $id=$req["id"];
-    //   $user = User::find($id);
-
-    //   $user->delete();
-    //   return redirect("/");
-    // }
+    public function perfilDestroy(Request $req)
+    {
+      $id=$req["id"];
+      $user = User::find($id);
+      
+        $user->delete();
+        return redirect("/");
+    }
 
 }
