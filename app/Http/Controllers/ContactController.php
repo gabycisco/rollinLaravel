@@ -34,4 +34,11 @@ class ContactController extends Controller
       $NewContact->save();
       return redirect("graciasContacto");
     }
+
+    function listado (){
+      $contact = Contact::all();
+      $vac = compact('contact');
+      return view('verListaContactos',$vac);
+    }
+
 }
