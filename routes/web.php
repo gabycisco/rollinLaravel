@@ -93,7 +93,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //CARRITO DE COMPRAS
     Route::get('/mochila','CartController@index')->middleware('auth');
-    Route::get('/cart/show/', 'CartController@show' );
+    Route::get('/cart/show/', 'CartController@show' )->middleware('auth');
 
     //AGREGAR AL CARRITO
     Route::post('/mochila/add','CartProductController@create')->middleware('auth');
