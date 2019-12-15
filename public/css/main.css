@@ -503,6 +503,8 @@ img {
     font-size: 18px;
     font-family: futurabook;
     text-decoration:none;
+    margin-right:7px;
+    align-self: right;
     }
 
   .BOTONROJO a{
@@ -683,6 +685,7 @@ footer .logo p{
   }
   .contenedorImagenPerfil1{
     text-align: center;
+    align-self: flex-start;
   }
 
   .contenedorImagenPerfil2{

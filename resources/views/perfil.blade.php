@@ -21,12 +21,13 @@
         <section class="col-lg-7 col-xs-12">
           <h3>{{$users->name . " ".$users->surname}}</h3>
           <br>
-          <p>Email: {{$users->email}}</p>
+          <p>E-MAIL: {{$users->email}}</p>
 
-          <p>Dirección: {{$users->address}} </p>
-          <p>Teléfono: {{$users->phone}}</p>
+          <p>DIRECCIÓN: {{$users->address}} </p>
+          <p>TELÉFONO: {{$users->phone}}</p>
           <br><br>
-          <div class="BOTONROJO botonPerfil">
+        </section>
+        <div class="BOTONROJO botonPerfil">
           <a href="/editarPerfil/{{$users->id}}">EDITAR DATOS</a>
           </div>
           <div class="BOTONROJO botonPerfil">
@@ -41,9 +42,8 @@
             <a href="/verListaContactos">VER MENSAJES</a>
           </div>
           <!--FIN LOGICA-->
-          <br><br>
-          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
-        </section>
+          <br><br><br>
+          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>
     </div>
   </div>
