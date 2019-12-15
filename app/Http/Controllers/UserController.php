@@ -49,13 +49,12 @@ class UserController extends Controller
 
     }
 
-    // public function perfilDestroy(Request $req)
-    // {
-    //   $id=$req["id"];
-    //   $user = User::find($id);
-
-    //   $user->delete();
-    //   return redirect("/");
-    // }
+    public function perfilDestroy(Request $req)
+     {
+       $user = Auth::user();
+        $user -> active = 0;
+    
+       return redirect("/");
+     }
 
 }
