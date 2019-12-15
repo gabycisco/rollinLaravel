@@ -29,14 +29,14 @@ class CartProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $formulario)
-    {    
-        
+    {
+
         $user_id=Auth::user();
         $carritoId = Cart::where('user_id','=',$user_id["id"])->get();
         // dd($carritoId);
 
-        $NewProduct = new Cart_Product();      
-        
+        $NewProduct = new Cart_Product();
+
 
         // $NewProduct->cart_id= $carritoId["id"];
         $NewProduct->cart_id= "1";
@@ -44,11 +44,13 @@ class CartProductController extends Controller
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
+
         $NewProduct->save();
-        return redirect("store");       
+
+        return redirect("store");
     }
 
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -69,7 +71,12 @@ class CartProductController extends Controller
      */
     public function show(Cart_Product $cart_Product)
     {
-        //
+      $userName=Auth::user()->id;
+      $cartOwner = Cart::find($userName);
+      $total = $cartOwner->products;
+      $vac = compact('formulario','total');
+
+        return view('store/mochila', $vac);
     }
 
     /**
@@ -106,5 +113,41 @@ class CartProductController extends Controller
         //
     }
 
+    public function add(Request $formulario){
 
+      $userName=Auth::user()->id;
+      $cartOwner = Cart::find($userName);
+      $activeCart = Cart::where([
+                ['user_id', '=', "$userName"],
+                ['status', '=', 1]
+            ])->get();
+
+
+      //dd($activeCart != "[]");
+      if($activeCart != "[]"){
+
+        $NewProduct = new Cart_Product();
+
+        $NewProduct->cart_id= $cartOwner->id;
+        $NewProduct->product_id=$formulario["product_id"];
+        $NewProduct->quantity=$formulario["quantity"];
+        $NewProduct->price=$formulario["price"];
+
+        $NewProduct->save();
+
+      } else {
+        $newCart = new Cart;
+        $newCart->user_id = Auth::user()->id;
+        $newCart->status = 1;
+        $newCart->save();
+        dd('chau');
+      }
+
+
+      $total = $cartOwner->products;
+      $vac = compact('formulario','total');
+
+      return view('store/test',$vac);
+
+    }
 }

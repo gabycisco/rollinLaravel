@@ -20,6 +20,7 @@ class ProductController extends Controller
       $vac = compact('products');
       return view('store/detail',$vac);
     }
+    
 
 
 

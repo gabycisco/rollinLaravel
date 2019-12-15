@@ -29,15 +29,16 @@
                            <p>$ {{$products->price}}</p>
                         </div>
                     </div>
-                    
+
                     <div class="col-2 row">
-                        <form action="/mochila/add" method="post">
+                        <form action="/mochila/add" method="get">
                             {{csrf_field()}}
                                 <input type="hidden" name="product_id" value="{{$products->id}}">
                                 <input type="hidden" name="quantity" value="1">
                                 <input type="hidden" name="price" value="{{$products->price}}">
+                                <input type="hidden" name="name" value="{{$products->name}}">
                                 <button type="button submit" class="btn buttonModalOk" value="Agregar">Agregar al carrito</button>
-                            </form> 
+                            </form>
                         </div>
                     </div>
                 </section>

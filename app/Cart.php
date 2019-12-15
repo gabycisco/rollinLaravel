@@ -9,16 +9,19 @@ class Cart extends Model
 {
     public $table = "carts";
     public $primaryKey = "id";
+    public $producto = [];
+    public $value;
+
 //    public $timestamps = false;
     public $guarded = [];
 
     public function usuario(){
-        return $this->belongsTo("App\User","user_id");
-  
+        return $this->belongsTo("App\User","id");
+
     }
 
     public function products(){
-        return $this->belongsToMany("App\Product", "cart_product","cart_id", "producto_id");
+        return $this->belongsToMany("App\Product", "cart_product","cart_id", "product_id");
     }
 
     public function sale(){
@@ -33,5 +36,8 @@ class Cart extends Model
    protected $fillable = [
        'id'
    ];
+   public function agregarUnProducto($valor){
+     $this->producto[] = $valor ;
+   }
 
 }

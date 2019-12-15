@@ -92,11 +92,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //CARRITO DE COMPRAS
-    Route::get('/mochila','CartController@index')->middleware('auth');
+    Route::get('/mochila','CartProductController@show')->middleware('auth');
     Route::get('/cart/show/', 'CartController@show' );
 
     //AGREGAR AL CARRITO
-    Route::post('/mochila/add','CartProductController@create')->middleware('auth');
+    Route::get('/mochila/add','CartProductController@add')->middleware('auth');
     // Route::post('/mochila/add','CartProductController@add')->middleware('auth');
 
 //RUTAS ADMIN

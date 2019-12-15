@@ -12,8 +12,8 @@ class Cart_Product extends Model
     //  $Cart_Product = Cart_Product::all();
     //  $vac = compact('Cart_Product');
     //  return $vac;\
-    public function producto(){
-      return $this->belongsTo("App\Product","product_id");
+    //public function producto(){
+    //  return $this->belongsTo("App\Product","product_id");
 
 
        /**
@@ -25,8 +25,8 @@ class Cart_Product extends Model
         'cart_id','id'
     ];
 
-    public function carrito(){
-      return $this->hasMany("App\Cart","id");
+  //  public function carrito(){
+  //    return $this->hasMany("App\Cart","id");
 
-    }
+  //  }
 }

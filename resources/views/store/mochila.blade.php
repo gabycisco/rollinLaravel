@@ -4,10 +4,21 @@
 @endsection
 @section("principal")
 
-<br>
-<h3>Gracias por su compra!</h3>
-<h3>Dentro de las 48hs. hábiles nos contactaremos para coordinar la entrega</h3>
-<br><br><br>
+
+
+<h1>Total hasta el momento</h1>
+
+@foreach ($total as $product)
+
+  <div class="col-3 articulo">
+    <img src="/storage/{{$product->img}}" alt="{{$product->name}}" width="40px">
+    <h3>{{$product->name}}</h3>
+    <h3>{{$product->name}}</h3>
+    <h3>{{$product->precio}}</h3>
+  </div>
+
+@endforeach
+
 <section>
 <article class=fotoCompra>
 <img src="/img/purchase.png" alt="">

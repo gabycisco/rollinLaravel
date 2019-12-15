@@ -21,10 +21,17 @@ class CartController extends Controller
      */
     public function index()
     {
-      $carts = new Cart;
-      $user_id=Auth::user()->id;
+    //  $carts = new Cart;
+    //  $carts->id = $user_id=Auth::user()->id;
+      //$cart->products[] = [
+      //  'id' => 3,
+      //  'name'=>"casco"
+      //];
+      //$cart->id =2;
+      return view('store/mochila');
+      //dd($cart->products);
 
-        //dd($carts->usuario);
+    //  dd($cart->products[0]['name']);
     }
 
     /**
@@ -33,20 +40,20 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(Request $formulario)
-    {    
-        
+    {
+
         $user_id=Auth::user();
         $carritoID = Cart::where('user_id','=',$user_id["id"])->get();
 
-        $NewProduct = new Cart_Product();      
-        
+        $NewProduct = new Cart_Product();
+
         $NewProduct->cart_id= $carritoID["id"];
         $NewProduct->product_id=$formulario["product_id"];
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
         $NewProduct->save();
-        return redirect("store");       
+        return redirect("store");
     }
 
     /**
