@@ -32,9 +32,18 @@
           <div class="BOTONROJO botonPerfil">
             <a href="#">VER COMPRAS</a>
           </div>
-          <button type="button" class="btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
+          <br><br>
+          <!--ACA FALTA LOGICA PARA QUE SI NO ES ADMIN SE OCULTEN LOS BOTONES-->
+          <div class="BOTONROJO botonPerfil">
+            <a href="/verListaNL">VER SUBSC.</a>
+          </div>
+          <div class="BOTONROJO botonPerfil">
+            <a href="/verListaContactos">VER MENSAJES</a>
+          </div>
+          <!--FIN LOGICA-->
+          <br><br>
+          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">Eliminar</button>
         </section>
-
       </div>
     </div>
   </div>
