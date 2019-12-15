@@ -52,7 +52,7 @@
           </div>
           <div class="modal-footer">
               <button type="button" class="btn button-contactoClaro" data-dismiss="modal">Cancelar</button>
-              <form action="/editarPerfil/destroy" method="post">
+              <form action="/perfil/destroy" method="post">
                   {{csrf_field()}}
                   <input type="hidden" name="id" value="{{$users->id}}">
                   <button type="button submit" class="btn buttonModalOk" value="Eliminar">Eliminar</button>

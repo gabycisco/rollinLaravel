@@ -53,9 +53,9 @@ class UserController extends Controller
     {
       $id=$req["id"];
       $user = User::find($id);
-      Auth::logout();
+      
         $user->delete();
-        return redirect("/home");
+        return redirect("/");
     }
 
 }
