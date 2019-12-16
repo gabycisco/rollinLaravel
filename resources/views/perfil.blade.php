@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-9 offset-lg-1 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-10 offset-lg-1 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
