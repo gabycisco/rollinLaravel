@@ -37,7 +37,7 @@
                                 <input type="hidden" name="quantity" value="1">
                                 <input type="hidden" name="price" value="{{$products->price}}">
                                 <input type="hidden" name="name" value="{{$products->name}}">
-                                <button type="button submit" class="btn buttonModalOk" value="Agregar">Agregar al carrito</button>
+                                <button type="button submit" class="btn  buttonModalOk" value="Agregar">Agregar al carrito</button>
                             </form>
                         </div>
                     </div>

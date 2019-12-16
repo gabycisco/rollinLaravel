@@ -74,7 +74,7 @@ class CartProductController extends Controller
       $userName=Auth::user()->id;
       $cartOwner = Cart::find($userName);
       $total = $cartOwner->products;
-      $vac = compact('formulario','total');
+      $vac = compact('formulario','total','cartOwner');
 
         return view('store/mochila', $vac);
     }
@@ -129,18 +129,33 @@ class CartProductController extends Controller
         $NewProduct = new Cart_Product();
 
         $NewProduct->cart_id= $cartOwner->id;
+
+
         $NewProduct->product_id=$formulario["product_id"];
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
+        $cartOwner->amount = $cartOwner->amount + $NewProduct->price ;
+
         $NewProduct->save();
+        $cartOwner->save();
 
       } else {
         $newCart = new Cart;
         $newCart->user_id = Auth::user()->id;
         $newCart->status = 1;
+        $newCart->amount = 0;
         $newCart->save();
-        dd('chau');
+
+        $NewProduct->cart_id= $cartOwner->id;
+        $NewProduct->cart_id= $cartOwner->amount;
+        $NewProduct->product_id=$formulario["product_id"];
+        $NewProduct->quantity=$formulario["quantity"];
+        $NewProduct->price=$formulario["price"];
+
+
+        $NewProduct->save();
+
       }
 
 

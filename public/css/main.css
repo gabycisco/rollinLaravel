@@ -222,7 +222,7 @@ header{
   border-radius: 10px;
   display: flex;
   _width:20%;
-  height: 50px;
+  height: 70px;
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -639,9 +639,9 @@ footer .logo p{
     _width:100%;
     background-color: #3A3539;
     color: #E8D8BE;
-    
+
     _padding-top: 50px;
-    
+
     border-radius: 10px;
 
 
@@ -656,7 +656,7 @@ footer .logo p{
     padding-top: 30px;
     padding-bottom: 45px;
     padding-left: 30px;
-    
+
 
   }
 
@@ -802,14 +802,14 @@ h1{
     padding-left: 0px;
   }
 
-  
+
   .newslater{
     padding: 20px 15px 20px 15px;
   }
   .newslater h2{
     text-align: center!important;
   }
-  
+
   .imgProductos article {
     padding-right: 30px;
   }
@@ -889,14 +889,14 @@ h1{
 display: inline-block;
 text-align: right;
 padding-right: 50px;
-margin-top:150px; 
+margin-top:150px;
 font-family: futuralightc;
 font-size: 15pt;
 }
 
 #voucher{
   font-family: futuralightc;
-  font-size: 18pt; 
+  font-size: 18pt;
 }
 
 article.fotoCompra{
