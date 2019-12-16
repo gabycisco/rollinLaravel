@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-6 offset-lg-3 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-8 offset-lg-2 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -25,19 +25,24 @@
             {{ csrf_field() }}
             <label class="col-lg-4 col-xs-8" for="name">Nombre:</label>
             <input class=" col-xs-8" id="name" type="text" name="name" value="{{$users->name}}">
+             <span class="error"> {{$errors->first("name")}} </span>
              <br>
             <label class="col-lg-4 col-xs-8"  for="surname">Apellido:</label>
             <input class="col-xs-8" id="surname" type="text" name="surname" value="{{$users->surname}}">
-             <br>
+            <span class="error"> {{$errors->first("surname")}} </span>
+            <br>
             <label class="col-lg-4 col-xs-8"  for="email">Email:</label>
             <input class="col-xs-8"id="email" type="email" name="email" value="{{$users->email}}">
-             <br>
+            <span class="error"> {{$errors->first("email")}} </span>
+            <br>
             <label class="col-lg-4 col-xs-8"  for="address">Dirección:</label>
             <input class="col-xs-8"id="addrees" type="text" name="address" value="{{$users->address}}">
-             <br>
+            <span class="error"> {{$errors->first("address")}} </span>
+            <br>
             <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
             <input class="col-xs-8"id="phone" type="number" name="phone" value="{{$users->phone}}">
-          <br>
+            <span class="error"> {{$errors->first("phone")}} </span>
+            <br>
           <br>
           <br>
         </section>

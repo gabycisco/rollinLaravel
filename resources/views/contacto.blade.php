@@ -89,27 +89,23 @@ if ($_POST) {
               </div>
               <section class="row">
                 <article class="col-md-6 col-xs-12">
-                <ul style='color:red' class='errores'>
-                    @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>
-                    @endforeach
-                </ul>
+                
                   <form class="formulario-de-contacto" method="POST" action="/formularioEnviado">
                   {{csrf_field()}}
                   <label for="name">Nombre</label>
                     <input id="name" type="text" name="name" value="{{old("name")}}"placeholder="">
                     <br>
-                    <!--<span class="error"><?=$errorNombre?></span>-->
+                    <span class="error"> {{$errors->first("name")}} </span>
                     <br>
                     <label for="email">Email</label>
                     <input id="email" type="email" name="email" value="{{old("email")}}"placeholder="">
                     <br>
-                    <!--<span class="error" ><?=$errorMail?></span>-->
+                    <span class="error"> {{$errors->first("email")}} </span>
                     <br>
                     <label for="mensaje">Mensaje</label>
                     <textarea name="mensaje" id="mensaje" cols="30" rows="10"value="{{old("mensaje")}}"></textarea>
                     <br>
-                    <!--<span class="error" ><?=$errorMensaje?></span>-->
+                    <span class="error"> {{$errors->first("mensaje")}} </span>
                     <br>
                     <div class="button-contacto col-md-4 col-xs-10">
                       <input type="submit" name="" value="ENVIAR">

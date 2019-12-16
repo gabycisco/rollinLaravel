@@ -22,7 +22,7 @@ class ContactController extends Controller
         'string'=> "Sólo puede ingresar texto",
         'required'=> "Este campo es obligatorio",
         'min'=> "Este campo requiere al menos 5 carateres",
-        'e-mail'=>"El formato email no es válido",
+        'e_mail'=>"El formato email no es válido",
       ];
       $this->validate($formulario, $reglas,$mensajes);
 

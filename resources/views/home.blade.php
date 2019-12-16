@@ -47,7 +47,7 @@
     </div>
     <section class="row newslater">
         <article class="col-lg-7 col-xs-12">
-            <h2 style="text-align: left">QUERÉS ENTERARTE DE NOVEDASDES Y OFERTAS EXCLUSIVAS? <br>
+            <h2 style="text-align: left">QUERÉS ENTERARTE DE NOVEDADES Y OFERTAS EXCLUSIVAS? <br>
             SUSCRIBITE A NUESTRO NEWSLETTER!</h2>
         </article>
         <article class="formularioNews col-lg-5  col-xs-12 row">

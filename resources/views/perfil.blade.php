@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-8 offset-lg-2 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-9 offset-lg-1 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -40,6 +40,9 @@
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="/verListaContactos">VER MENSAJES</a>
+          </div>
+          <div class="BOTONROJO botonPerfil">
+            <a href="/admin">GESTION PROD.</a>
           </div>
           @endif
           <br><br><br>
