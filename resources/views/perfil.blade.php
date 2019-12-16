@@ -34,14 +34,14 @@
             <a href="#">VER COMPRAS</a>
           </div>
           <br><br>
-          <!--ACA FALTA LOGICA PARA QUE SI NO ES ADMIN SE OCULTEN LOS BOTONES-->
+          @if (Auth::user()->admin)
           <div class="BOTONROJO botonPerfil">
             <a href="/verListaNL">VER SUBSC.</a>
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="/verListaContactos">VER MENSAJES</a>
           </div>
-          <!--FIN LOGICA-->
+          @endif
           <br><br><br>
           <button type="button" class="BOTONROJO btn buttonModalOk" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>

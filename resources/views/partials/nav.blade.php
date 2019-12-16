@@ -51,13 +51,13 @@ $navItems =
               <img src="/img/vector_mochila.png" width="30px" id="logo">
             </a>
           </li>
-          <!--ACA VA CONDICION PARA QUE SOLO LO VEA EL ADMIN-->
+          @if (Auth::user()->admin)
           <li class="nav-item">
             <a class="nav-link" href='#'>
               <img src="/img/admin-nav.png" width="30px" id="logo">
             </a>
           </li>
-
+         @endif
         </ul>
 
       </div>
