@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-6 offset-lg-3 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-8 offset-lg-2 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -43,7 +43,7 @@
           </div>
           <!--FIN LOGICA-->
           <br><br><br>
-          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
+          <button type="button" class="BOTONROJO btn buttonModalOk" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>
     </div>
   </div>

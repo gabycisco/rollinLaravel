@@ -23,30 +23,30 @@
           <br>
           <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <label for="name">Nombre:</label>
-            <input id="name" type="text" name="name" value="{{$users->name}}">
+            <label class="col-lg-4 col-xs-8" for="name">Nombre:</label>
+            <input class=" col-xs-8" id="name" type="text" name="name" value="{{$users->name}}">
              <br>
-            <label for="surname">Apellido:</label>
-            <input id="surname" type="text" name="surname" value="{{$users->surname}}">
+            <label class="col-lg-4 col-xs-8"  for="surname">Apellido:</label>
+            <input class="col-xs-8" id="surname" type="text" name="surname" value="{{$users->surname}}">
              <br>
-            <label for="email">Email:</label>
-            <input id="email" type="email" name="email" value="{{$users->email}}">
+            <label class="col-lg-4 col-xs-8"  for="email">Email:</label>
+            <input class="col-xs-8"id="email" type="email" name="email" value="{{$users->email}}">
              <br>
-            <label for="address">Dirección:</label>
-            <input id="addrees" type="text" name="address" value="{{$users->address}}">
+            <label class="col-lg-4 col-xs-8"  for="address">Dirección:</label>
+            <input class="col-xs-8"id="addrees" type="text" name="address" value="{{$users->address}}">
              <br>
-            <label for="telefono">Teléfono:</label>
-            <input id="phone" type="number" name="phone" value="{{$users->phone}}">
+            <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
+            <input class="col-xs-8"id="phone" type="number" name="phone" value="{{$users->phone}}">
           <br>
           <br>
           <br>
         </section>
-        <div class="BOTONROJO botonPerfil">
+        <div class="BOTONROJO botonPerfil offset-lg-2">
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
         <div >
-            <button type="submit" class="BOTONROJO botonPerfil" style="border:none">GUARDAR</button>
+            <button type="submit" class="BOTONROJO botonPerfil guardar offset-lg-3" style="border:none">GUARDAR</button>
             </div>
       </div>
     </div>

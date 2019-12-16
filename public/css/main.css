@@ -676,6 +676,10 @@ footer .logo p{
     flex-direction: row;
   }
 
+  .guardar{
+    padding: 5px;
+  }
+
   /* .perfil img{
     width:200px;
     padding-bottom: 20px;
