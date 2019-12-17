@@ -54,7 +54,7 @@ $navItems =
           @auth
             @if (Auth::user()->admin)
             <li class="nav-item">
-              <a class="nav-link" href='#'>
+              <a class="nav-link" href='/admin'>
                 <img src="/img/admin-nav.png" width="30px" id="logo">
               </a>
             </li>
