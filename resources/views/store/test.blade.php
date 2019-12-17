@@ -4,9 +4,9 @@
 @endsection
 @section("principal")
 
+<br><br><br>
+<h2>Has agregado este producto al carrito</h2>
 <br>
-<h1>Has agregado este producto al carrito</h1>
-
 
 <article class="col-12">
   <section class="row">
@@ -21,15 +21,15 @@
         </div>
       </section>
     </article>
+<br><br>
 
-
-          <div class="btn buttonModalOk">
-            <a href="/store">VOLVER A LA TIENDA</a>
+          <div class="BOTONROJO btn buttonModalOk"style="font-size:15px">
+            <a href="/store">VOLVER A TIENDA</a>
           </div>
-          <div class="btn buttonModalOk">
-            <a href="/mochila">FINALIZAR LA COMPRA</a>
+          <div class="BOTONROJO btn buttonModalOk " style="font-size:15px">
+            <a href="/mochila">CERRAR COMPRA</a>
           </div>
 
-
+<br><br><br><br>
 
 @endsection

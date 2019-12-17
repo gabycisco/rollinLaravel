@@ -102,6 +102,9 @@ Route::get('/home', 'HomeController@index')->name('home');
     //CHECKOUT
     Route::get('/checkout','CartProductController@checkout')->middleware('auth');
 
+    //VER COMPRAS
+    Route::get('/verCompras','CartProductController@listado')->middleware('auth');
+
 
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS

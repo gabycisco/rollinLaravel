@@ -245,4 +245,10 @@ class CartProductController extends Controller
 
         return view('/store/graciasCompra');
     }
+    
+    function listado (){
+      $compras = Cart_Product::all();
+      $vac = compact('compras');
+      return view('verCompras',$vac);
+    }
 }
