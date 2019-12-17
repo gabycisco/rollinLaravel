@@ -39,6 +39,11 @@
             <input class="col-xs-8"id="addrees" type="text" name="address" value="{{$users->address}}">
             <span class="error"> {{$errors->first("address")}} </span>
             <br>
+            <label class="col-lg-4 col-xs-8"  for="provincias">Provincia:</label>
+            <select name="provincias" id="provincias">
+            <option value=""></option>
+            </select>
+            <br>
             <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
             <input class="col-xs-8"id="phone" type="number" name="phone" value="{{$users->phone}}">
             <span class="error"> {{$errors->first("phone")}} </span>
@@ -57,5 +62,5 @@
     </div>
   </div>
 
-
+<script src="/resources/js/app.js"></script>
   @endsection
