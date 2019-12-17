@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-6 offset-lg-3 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-8 offset-lg-2 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -23,30 +23,35 @@
           <br>
           <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <label for="name">Nombre:</label>
-            <input id="name" type="text" name="name" value="{{$users->name}}">
+            <label class="col-lg-4 col-xs-8" for="name">Nombre:</label>
+            <input class=" col-xs-8" id="name" type="text" name="name" value="{{$users->name}}">
+             <span class="error"> {{$errors->first("name")}} </span>
              <br>
-            <label for="surname">Apellido:</label>
-            <input id="surname" type="text" name="surname" value="{{$users->surname}}">
-             <br>
-            <label for="email">Email:</label>
-            <input id="email" type="email" name="email" value="{{$users->email}}">
-             <br>
-            <label for="address">Dirección:</label>
-            <input id="addrees" type="text" name="address" value="{{$users->address}}">
-             <br>
-            <label for="telefono">Teléfono:</label>
-            <input id="phone" type="number" name="phone" value="{{$users->phone}}">
-          <br>
+            <label class="col-lg-4 col-xs-8"  for="surname">Apellido:</label>
+            <input class="col-xs-8" id="surname" type="text" name="surname" value="{{$users->surname}}">
+            <span class="error"> {{$errors->first("surname")}} </span>
+            <br>
+            <label class="col-lg-4 col-xs-8"  for="email">Email:</label>
+            <input class="col-xs-8"id="email" type="email" name="email" value="{{$users->email}}">
+            <span class="error"> {{$errors->first("email")}} </span>
+            <br>
+            <label class="col-lg-4 col-xs-8"  for="address">Dirección:</label>
+            <input class="col-xs-8"id="addrees" type="text" name="address" value="{{$users->address}}">
+            <span class="error"> {{$errors->first("address")}} </span>
+            <br>
+            <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
+            <input class="col-xs-8"id="phone" type="number" name="phone" value="{{$users->phone}}">
+            <span class="error"> {{$errors->first("phone")}} </span>
+            <br>
           <br>
           <br>
         </section>
-        <div class="BOTONROJO botonPerfil">
+        <div class="BOTONROJO botonPerfil offset-lg-2">
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
         <div >
-            <button type="submit" class="BOTONROJO botonPerfil" style="border:none">GUARDAR</button>
+            <button type="submit" class="BOTONROJO botonPerfil guardar offset-lg-3" style="border:none">GUARDAR</button>
             </div>
       </div>
     </div>

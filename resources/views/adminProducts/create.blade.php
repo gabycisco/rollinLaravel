@@ -60,29 +60,30 @@
                             <img src="/img/no-photo.png" width="100%" alt="">
                         </div>
                         <div>
-                        <ul style='color:red' class='errores'>
-                        @foreach ($errors->all() as $error)
-                        <li>{{$error}}</li>
-                        @endforeach
-                        </ul>
+                        
                         </div>
                         <form action="/admin/create" method="post" class="col-7 offset-1 row" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <label for="name" class="col-12">Nombre</label>
                             <input type="text" name="name" class="campoACompletar col-12" value={{old("name")}}>
-
+                            <br><span class="error"> {{$errors->first("name")}} </span>
+                            <br>
                             <label for="brand_id" class="col-12">Marca</label>
                             <input type="text" name="brand_id" class="campoACompletar col-12" value={{old("brand_id")}}>
-                            
+                            <br><span class="error"> {{$errors->first("brand_id")}} </span>
+                            <br>
                             <label for="description" class="col-12">Descripción</label>
                             <textarea name="description" class="campoACompletar col-12" rows="5" value={{old("description")}}></textarea>
-
+                            <br><span class="error"> {{$errors->first("description")}} </span>
+                            <br>
                             <label for="price" class="col-12">Precio</label>
                             <p>$ <input type="text" name="price" class="campoACompletar col-6" value={{old("price")}}></p>   
-                            
+                            <br><span class="error"> {{$errors->first("price")}} </span>
+                            <br>
                             <label for="imgProd" class="col-12">Imagen</label>
                             <input type="file" name="imgProd" class="campoACompletar col-6" value={{old("imgProd")}}>
-                            
+                            <br><span class="error"> {{$errors->first("imgProd")}} </span>
+                            <br>
                             <div class="button-contacto col-2 offset-10">
                             <input type="submit" name="" value="Enviar">
                             </div>

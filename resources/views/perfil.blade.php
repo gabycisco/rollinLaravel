@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-6 offset-lg-3 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-10 offset-lg-1 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -34,16 +34,19 @@
             <a href="#">VER COMPRAS</a>
           </div>
           <br><br>
-          <!--ACA FALTA LOGICA PARA QUE SI NO ES ADMIN SE OCULTEN LOS BOTONES-->
+          @if (Auth::user()->admin)
           <div class="BOTONROJO botonPerfil">
             <a href="/verListaNL">VER SUBSC.</a>
           </div>
           <div class="BOTONROJO botonPerfil">
             <a href="/verListaContactos">VER MENSAJES</a>
           </div>
-          <!--FIN LOGICA-->
+          <div class="BOTONROJO botonPerfil">
+            <a href="/admin">GESTION PROD.</a>
+          </div>
+          @endif
           <br><br><br>
-          <button type="button" class="BOTONROJO btn buttonModalOk col-12" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
+          <button type="button" class="BOTONROJO btn buttonModalOk" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>
     </div>
   </div>
