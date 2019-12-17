@@ -6,6 +6,7 @@ use App\Cart_Product;
 use App\User;
 use App\Product;
 use App\Cart;
+use App\Sale;
 use Auth;
 use Illuminate\Http\Request;
 use Session;
@@ -13,6 +14,7 @@ use Session;
 
 class CartProductController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -72,11 +74,35 @@ class CartProductController extends Controller
     public function show(Cart_Product $cart_Product)
     {
       $userName=Auth::user()->id;
-      $cartOwner = Cart::find($userName);
-      $total = $cartOwner->products;
-      $vac = compact('formulario','total','cartOwner');
+      //dd($userName);
+    //  $cartOwner = Cart::find(2);
+    //  dd($cartOwner);
+      //REEMPLAZO
+      $cartOwner = Cart::where([
+                ['user_id', '=', "$userName"],
+                ['status', '=', 1]
+            ])->get();
+    if( $cartOwner != '[]'){
+      $idCarrito = $cartOwner[0]->id;
+      $productosEnCarrito = Cart_Product::where([
+                ['cart_id', '=', "$idCarrito"],
+                //['status', '=', 1]
+            ])->get();
+            $vac = compact('formulario','productosEnCarrito','cartOwner');
 
-        return view('store/mochila', $vac);
+              return view('store/mochila', $vac);
+    } else {
+      return view('/home');
+    }
+
+
+
+    //dd($productosEnCarrito);
+      //dd($cartOwner[0]->status == 1);
+
+      //$cartOwner = $cartOwner[0];
+      //$total = $cartOwner->products;
+
     }
 
     /**
@@ -116,53 +142,107 @@ class CartProductController extends Controller
     public function add(Request $formulario){
 
       $userName=Auth::user()->id;
-      $cartOwner = Cart::find($userName);
-      $activeCart = Cart::where([
+
+    // $cartOwner = Cart::find($userName);
+
+      // $cartOwner = Cart::where([
+      //           ['user_id', '=', "$userName"],
+      //           ['status', '=', 1]
+      //       ])->get();
+
+//  dd($cartOwnerd);
+//$cartOwner = $cartOwner[0];
+//  dd($cartOwner !== null);
+      $cartOwner = Cart::where([
                 ['user_id', '=', "$userName"],
                 ['status', '=', 1]
             ])->get();
-
-
+      //dd($cartOwner[0] != "[]");
+ //dd($activeCart[0]->status );
+//dd($activeCart[]);
       //dd($activeCart != "[]");
-      if($activeCart != "[]"){
+      if($cartOwner != "[]"){
 
         $NewProduct = new Cart_Product();
 
-        $NewProduct->cart_id= $cartOwner->id;
+        $NewProduct->cart_id = $cartOwner[0]->id;
 
 
         $NewProduct->product_id=$formulario["product_id"];
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
-        $cartOwner->amount = $cartOwner->amount + $NewProduct->price ;
+        $cartOwner[0]->amount = $cartOwner[0]->amount + $NewProduct->price ;
 
         $NewProduct->save();
-        $cartOwner->save();
+        $cartOwner[0]->save();
 
       } else {
+
+
+
         $newCart = new Cart;
         $newCart->user_id = Auth::user()->id;
         $newCart->status = 1;
         $newCart->amount = 0;
         $newCart->save();
 
-        $NewProduct->cart_id= $cartOwner->id;
-        $NewProduct->cart_id= $cartOwner->amount;
+        $cartOwner = Cart::where([
+                  ['user_id', '=', "$userName"],
+                  ['status', '=', 1]
+              ])->get();
+        $NewProduct = new Cart_Product();
+        $NewProduct->cart_id = $cartOwner[0]->id;
+        $cartOwner[0]->amount = $cartOwner[0]->amount + $formulario["price"] ;
         $NewProduct->product_id=$formulario["product_id"];
         $NewProduct->quantity=$formulario["quantity"];
         $NewProduct->price=$formulario["price"];
 
 
         $NewProduct->save();
+        $cartOwner[0]->save();
+
+        $total = $cartOwner[0]->products;
+        $vac = compact('formulario','total');
+
+        return view('store/test',$vac);
 
       }
 
 
-      $total = $cartOwner->products;
+      $total = $cartOwner[0]->products;
       $vac = compact('formulario','total');
 
       return view('store/test',$vac);
 
+    }
+
+    public function checkout()
+    {
+      $venta = new Sale;
+      $userName = Auth::user()->id;
+      //$cart = Cart::find($userName);
+      $cart = Cart::where([
+                ['user_id', '=', "$userName"],
+                ['status', '=', 1]
+            ])->get();
+      //dd($cartOwner[0]);
+
+      $cart = $cart[0];
+
+      $venta->cart_id =  $cart->id;
+      $venta->save();
+
+      $activeCart = Cart::where([
+                ['user_id', '=', "$userName"],
+                ['status', '=', 1]
+            ])->get();
+      $cart->status = 0;
+
+      $cart->save();
+
+
+
+        return view('/store/graciasCompra');
     }
 }

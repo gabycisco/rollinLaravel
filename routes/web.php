@@ -99,6 +99,10 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/mochila/add','CartProductController@add')->middleware('auth');
     // Route::post('/mochila/add','CartProductController@add')->middleware('auth');
 
+    //CHECKOUT
+    Route::get('/checkout','CartProductController@checkout')->middleware('auth');
+
+
 //RUTAS ADMIN
     // LISTAR Y DETALLE DE ARTÍCULOS
     Route::get('/admin','ProductController@adminIndex')->middleware('admin');

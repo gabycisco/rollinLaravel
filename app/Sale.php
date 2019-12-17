@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    public $table = "sale";
+    public $table = "sales";
     public $primaryKey = "id";
 //    public $timestamps = false;
     public $guarded = [];
