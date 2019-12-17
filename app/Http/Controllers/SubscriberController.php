@@ -12,7 +12,7 @@ class SubscriberController extends Controller
 
       
       $reglas=[
-        'email'=>"e-mail|required|min:5", 
+        'email'=>"e-mail|required|min:5|", 
 
       ];
 
@@ -20,6 +20,7 @@ class SubscriberController extends Controller
         'required'=> "Este campo es obligatorio",
         'min'=> "Este campo requiere al menos 5 carateres",
         'e-mail'=>"El formato email no es válido",
+        'unique'=>"Ya estás subscripto!",
       ];
       
       $this->validate($formulario, $reglas,$mensajes);

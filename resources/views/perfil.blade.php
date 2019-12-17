@@ -30,9 +30,11 @@
         <div class="BOTONROJO botonPerfil">
           <a href="/editarPerfil/{{$users->id}}">EDITAR DATOS</a>
           </div>
+          @if (Auth::user()->admin==0)
           <div class="BOTONROJO botonPerfil">
             <a href="#">VER COMPRAS</a>
           </div>
+          @endif
           <br><br>
           @if (Auth::user()->admin)
           <div class="BOTONROJO botonPerfil">
