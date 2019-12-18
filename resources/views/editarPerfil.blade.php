@@ -70,8 +70,7 @@ fetch ("https://apis.datos.gob.ar/georef/api/provincias")
     var select=document.querySelector('#provincias');
     console.log(select.innerHTML);
     for(var i = 0; i < data.provincias.length; i++){
-        select.innerHTML = 
-        select.innerHTML + "<option value='"+data.provincias[i].nombre+"'>"+data.provincias[i].nombre+"</option>";
+        select.innerHTML = select.innerHTML + "<option value='"+data.provincias[i].nombre+"'>"+data.provincias[i].nombre+"</option>";
     }
     console.log(select.innerHTML);
     
