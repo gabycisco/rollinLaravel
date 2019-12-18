@@ -40,8 +40,7 @@
             <span class="error"> {{$errors->first("address")}} </span>
             <br>
             <label class="col-lg-4 col-xs-8"  for="provincias">Provincia:</label>
-            <select name="provincias" id="provincias">
-            <option value=""></option>
+            <select name="provincias" id="provincias" style="width:175px; background-color:#E8D8BE;">
             </select>
             <br>
             <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
@@ -62,5 +61,23 @@
     </div>
   </div>
 
-<script src="/resources/js/app.js"></script>
+<script>
+fetch ("https://apis.datos.gob.ar/georef/api/provincias")
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+    var select=document.querySelector('#provincias');
+    console.log(select.innerHTML);
+    for(var i = 0; i < data.provincias.length; i++){
+        select.innerHTML = 
+        select.innerHTML + "<option value='"+data.provincias[i].nombre+"'>"+data.provincias[i].nombre+"</option>";
+    }
+    console.log(select.innerHTML);
+    
+    
+    })
+    .catch(function(error){
+        console.log("Ups! Tenemos un error:"+error)
+    })</script>
   @endsection

@@ -25,6 +25,7 @@
 
           <p>DIRECCIÓN: {{$users->address}} </p>
           <p>TELÉFONO: {{$users->phone}}</p>
+          <p>PROVINCIA: {{$users->provincia}} </p>
           <br><br>
         </section>
         <div class="BOTONROJO botonPerfil">
