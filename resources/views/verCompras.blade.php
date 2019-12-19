@@ -11,20 +11,22 @@
         
         <article class="col-12">
                 <section class="row">
-            @forelse ($carritosCerrados as $carritosCerrados)
+            @forelse ($carritosCerrados as $carritoCerrado )
                     
                     <div class="col-8 row">
                         <div class="productTitle col-12">
-                         <h3>ID Compra: {{$carritosCerrados->id}}</h3>                      
+                         <h3>ID Compra: {{$carritoCerrado->id}}</h3>                      
                         </div>
                         <div class="productPrice col-12">
-                            <p>Fecha: {{$carritosCerrados->created_at}}</p>
-                        </div>    
+                            <p>Fecha: {{$carritoCerrado->created_at}}</p>
+                        </div>   
                         <div class="productBrand col-12">
                         </div>
-                        <p>Products: {{$carritosCerrados->product_id}}</p>
+                        @foreach($carritoCerrado->products as $product)
+                        <p>Products: {{$product->name}}</p>
+                        @endforeach
                         <div class="productPrice col-12">
-                            <p>Total: ${{$carritosCerrados->price}}</p>
+                            <p>Total: ${{$carritoCerrado->amount}}</p>
                         </div>
                     </div>
                    

@@ -143,8 +143,8 @@ class CartController extends Controller
           ['user_id', '=', "$id"],
           ['status', '=', 0],
       ])->get();
-      $vac=compact('carritosCerrados');
       
-        return view ('verCompras', $vac);
+      $vac=compact('carritosCerrados');
+      return view ('verCompras', $vac);
       }
 }
