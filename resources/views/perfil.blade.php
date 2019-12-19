@@ -5,7 +5,7 @@
 @section("principal")
 
   <div class="row">
-    <div class="contenedorPerfil col-lg-10 offset-lg-1 col-xs-12 row">
+    <div class="contenedorPerfil col-lg-8 offset-lg-2 col-xs-12 row">
       
         <section class="col-12">
           <span class="titPerfil">TU PERFIL</span>  
@@ -28,26 +28,16 @@
           <p>PROVINCIA: {{$users->provincia}} </p>
           <br><br>
         </section>
-        <div class="BOTONROJO botonPerfil">
+        
+        <div class="BOTONROJO botonPerfil"style="margin-left:340px;">
           <a href="/editarPerfil/{{$users->id}}">EDITAR DATOS</a>
           </div>
           @if (Auth::user()->admin==0)
-          <div class="BOTONROJO botonPerfil">
+          <div class="BOTONROJO botonPerfil"style="margin-left:10px;">
             <a href="/verCompras/{{$users->id}}">VER COMPRAS</a>
           </div>
           @endif
-          <br><br>
-          @if (Auth::user()->admin)
-          <div class="BOTONROJO botonPerfil">
-            <a href="/verListaNL">VER SUBSC.</a>
-          </div>
-          <div class="BOTONROJO botonPerfil">
-            <a href="/verListaContactos">VER MENSAJES</a>
-          </div>
-          <div class="BOTONROJO botonPerfil">
-            <a href="/admin">GESTION PROD.</a>
-          </div>
-          @endif
+        
           <br><br><br>
           <button type="button" class="BOTONROJO btn buttonModalOk" data-toggle="modal" data-target="#exampleModal">ELIMINAR</button>
       </div>

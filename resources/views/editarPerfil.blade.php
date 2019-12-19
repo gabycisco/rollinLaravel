@@ -50,12 +50,12 @@
           <br>
           <br>
         </section>
-        <div class="BOTONROJO botonPerfil offset-lg-2">
+        <div class="BOTONROJO botonPerfil "style="margin-left:343px;">
               <label for="avatar">CAMBIAR FOTO</label>
              <input id="avatar" type="file" name="avatar" value="">
             </div>
         <div >
-            <button type="submit" class="BOTONROJO botonPerfil guardar offset-lg-3" style="border:none">GUARDAR</button>
+            <button type="submit" class="BOTONROJO botonPerfil guardar " style="margin-left:10px; border:none;">GUARDAR</button>
             </div>
       </div>
     </div>
@@ -74,9 +74,10 @@ fetch ("https://apis.datos.gob.ar/georef/api/provincias")
     }
     console.log(select.innerHTML);
     
-    
     })
     .catch(function(error){
         console.log("Ups! Tenemos un error:"+error)
+
+    
     })</script>
   @endsection

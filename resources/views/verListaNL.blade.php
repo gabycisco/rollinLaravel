@@ -6,7 +6,7 @@
 <div class="row ">
     <div class="col-10 offset-1 editContainer row">
         <div class="col-10">
-            <h1>SUBSCRIPCIONES NEWSLETTER</h1>
+            <h1>Subscriptores Newsletter</h1>
         </div>
         <article class="col-12">
             @forelse ($subscriber as $subscriber)
