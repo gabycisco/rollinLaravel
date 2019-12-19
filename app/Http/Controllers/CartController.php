@@ -142,7 +142,7 @@ class CartController extends Controller
         $carritosCerrados= Cart::where([
           ['user_id', '=', "$id"],
           ['status', '=', 0],
-      ])->get();
+      ])->orderBy("id","desc")->get();
       
       $vac=compact('carritosCerrados');
       return view ('verCompras', $vac);

@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-8 row">
                   <div class="productTitle col-12">
-                    <h3>{{$product->name}}</h3>
+                    <h3>{{$product->product->name}}</h3>
                   </div>
                   <div class="productPrice col-12">
                     <h3>{{$product->price}}</h3>
