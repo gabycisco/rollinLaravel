@@ -33,7 +33,7 @@
                                 @enderror 
                                 <br>
                             <div class="">
-                                <label for="avatar">FOTO</label>
+                                <label for="avatar"class="BOTONROJO col-lg-2">FOTO</label>
                                 <input id="avatar" type="file" name="avatar" value="">
                             </div>      
                             <br>
