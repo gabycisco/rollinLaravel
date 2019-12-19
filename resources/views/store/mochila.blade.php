@@ -12,7 +12,7 @@
       <div class="col-12">
           <h1>Total hasta el momento ${{$cartOwner[0]->amount}}</h1>
           <br><br>
-            
+
       </div>
       @foreach ($productosEnCarrito as $product)
         <article class="col-12">
@@ -32,7 +32,7 @@
               </section>
             </article>
       @endforeach
-      <br><br><br><br>
+
       <div class="btn buttonModalOk">
          <div class="">
               <a href="/checkout"><h2>PAGAR</h2></a>
