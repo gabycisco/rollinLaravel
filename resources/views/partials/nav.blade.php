@@ -46,6 +46,7 @@ $navItems =
             <?php endif; ?>
 
           <?php endforeach ;?>
+          @auth
           @if(Auth::user()->admin==0)
           <li class="nav-item">
             <a class="nav-link" href='/mochila'>
@@ -53,6 +54,7 @@ $navItems =
             </a>
           </li>
           @endif
+          @endauth
           @auth
             @if (Auth::user()->admin)
             <!--<li class="nav-item">
