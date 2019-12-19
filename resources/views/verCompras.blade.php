@@ -22,8 +22,9 @@
                         </div>   
                         <div class="productBrand col-12">
                         </div>
+                        <p>Products:</p>
                         @foreach($carritoCerrado->products as $product)
-                        <p>Products: {{$product->name}}</p>
+                        <p>{{$product->name}}-</p>
                         @endforeach
                         <div class="productPrice col-12">
                         <p>Total: ${{$carritoCerrado->amount}}</p>
