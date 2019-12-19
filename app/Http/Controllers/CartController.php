@@ -138,4 +138,13 @@ class CartController extends Controller
     }
 
 
+    function listado($id){
+        $carritosCerrados= Cart::where([
+          ['user_id', '=', "$id"],
+          ['status', '=', 0],
+      ])->get();
+      $vac=compact('carritosCerrados');
+      
+        return view ('verCompras', $vac);
+      }
 }

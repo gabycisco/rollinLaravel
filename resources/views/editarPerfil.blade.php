@@ -40,7 +40,7 @@
             <span class="error"> {{$errors->first("address")}} </span>
             <br>
             <label class="col-lg-4 col-xs-8"  for="provincias">Provincia:</label>
-            <select name="provincias" id="provincias" style="width:175px; background-color:#E8D8BE;">
+            <select name="provincias" id="provincias" value="{{$users->provincias}}" style="width:175px; background-color:#E8D8BE;">
             </select>
             <br>
             <label class="col-lg-4 col-xs-8"  for="telefono">Teléfono:</label>
