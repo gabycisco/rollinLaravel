@@ -3,8 +3,8 @@
         <article class="col-md-2 col-xs-12">
             <a href="#"><h5>Tienda</h5></a>
             <ul>
-                <li><a href="#">Monopatines</a></li>
-                <li><a href="#">Accesorios</a></li>
+                <li><a href="/store">Monopatines</a></li>
+                <li><a href="/store">Accesorios</a></li>
             </ul>
         </article>
         <article class="col-md-2 col-xs-12">
