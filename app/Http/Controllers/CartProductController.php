@@ -88,7 +88,7 @@ class CartProductController extends Controller
                 ['cart_id', '=', "$idCarrito"],
                 //['status', '=', 1]
             ])->get();
-            $vac = compact('formulario','productosEnCarrito','cartOwner');
+            $vac = compact('productosEnCarrito','cartOwner');
 
               return view('store/mochila', $vac);
     } else {
