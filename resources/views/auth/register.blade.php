@@ -8,6 +8,7 @@
                        
                     <form class="formulario-de-registro" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
+                        <br><br>
                         <h2>REGISTRO</h2>
                         <br>
                             <label for="name">Nombre</label>
