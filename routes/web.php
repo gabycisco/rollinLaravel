@@ -96,7 +96,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/cart/show/', 'CartController@show' );
 
     //AGREGAR AL CARRITO
-    Route::get('/mochila/add','CartProductController@add')->middleware('auth');
+      Route::get('/mochila/add','CartProductController@add')->middleware('auth');
     // Route::post('/mochila/add','CartProductController@add')->middleware('auth');
 
     //CHECKOUT

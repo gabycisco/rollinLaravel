@@ -16,7 +16,7 @@
           <section class="row">
             <!-- loop de pruductos-->
                 <div class="productImg col-2">
-                  <img src="/storage/{{$product->img}}" alt="{{$product->name}}" width="10px">
+                  <img src="/storage/{{$product->img}}" alt="{{$product->name}}" width="200px">
                 </div>
                 <div class="col-8 row">
                   <div class="productTitle col-12">
