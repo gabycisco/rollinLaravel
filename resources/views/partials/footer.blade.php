@@ -1,7 +1,7 @@
 <footer class="row">
     <section class="col-md-7 col-xs-12  row listas">
         <article class="col-md-2 col-xs-12">
-            <a href="#"><h5>Tienda</h5></a>
+            <a href="/store"><h5>Tienda</h5></a>
             <ul>
                 <li><a href="/store">Monopatines</a></li>
                 <li><a href="/store">Accesorios</a></li>
