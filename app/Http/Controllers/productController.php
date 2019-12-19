@@ -102,7 +102,7 @@ class ProductController extends Controller
       $product->name = $formulario["name"];
       $product->description = $formulario["description"];
       $product->price = $formulario["price"];
-      $product->brand_id = $formulario["brand_id"];
+      $product->brand = $formulario["brand"];
       $product->save();
 
       $vac = compact('product');
