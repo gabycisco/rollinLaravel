@@ -79,7 +79,7 @@ class ProductController extends Controller
       $NewProduct->name = $formulario["name"];
       $NewProduct->description = $formulario["description"];
       $NewProduct->price = $formulario["price"];
-      $NewProduct->brand_id = $formulario["brand_id"];
+      $NewProduct->brand = $formulario["brand"];
       $NewProduct->save();
 
       return redirect("admin");
