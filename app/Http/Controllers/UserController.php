@@ -55,6 +55,7 @@ class UserController extends Controller
         $user->email =$request["email"];
         $user->address =$request["address"];
         $user->phone = $request["phone"];
+        $user->provincia=$request["provincia"];
 
         $user->save();
 

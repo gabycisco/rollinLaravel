@@ -34,7 +34,7 @@ $navItems =
               <a href="/perfil/{{Auth::user()->id}}" class="nav-link">Perfil</a>
               </li>
               <li class="nav-item">
-                <a href="/logout" class="nav-link">Cerrar sesión</a>
+                <a href="/logout" class="nav-link">Cerrar Sesión</a>
               </li>
               <?php break;?>
             <?php else: ?>
@@ -46,18 +46,32 @@ $navItems =
             <?php endif; ?>
 
           <?php endforeach ;?>
+          @auth
+          @if(Auth::user()->admin==0)
           <li class="nav-item">
             <a class="nav-link" href='/mochila'>
               <img src="/img/vector_mochila.png" width="30px" id="logo">
             </a>
           </li>
+          @endif
+          @endauth
           @auth
             @if (Auth::user()->admin)
-            <li class="nav-item">
-              <a class="nav-link" href='/admin'>
-                <img src="/img/admin-nav.png" width="30px" id="logo">
+            <!--<li class="nav-item">
+              <a class="nav-link" href='' id="menu" onclick="ver()" onmouseout="ocultar()">
+                <img src="/img/admin-nav.png" width="30px" id="logo"  >
               </a>
-            </li>
+            </li>-->
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"  style="background-color:#3A3539; margin-top:5px;margin-left:10px;">
+                <img src="/img/admin-nav.png" width="30px" id="logo" >
+                </a>
+            <div class="dropdown-menu "style="background-color:#3A3539">
+                <a class="dropdown-item" style="background-color:#3A3539" href="/admin">Administrar Productos</a>
+                <a class="dropdown-item" style="background-color:#3A3539" href="/verListaContactos">Ver Mensajes</a>
+                <a class="dropdown-item" style="background-color:#3A3539" href="/verListaNL">Ver Subscriptores</a>
+            </div>
+            </div>
           @endif
          @endauth
         </ul>
@@ -65,4 +79,3 @@ $navItems =
       </div>
     </div>
   </nav>
-  <!-- FINAL DEL NAVBAR  -->

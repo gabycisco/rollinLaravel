@@ -124,4 +124,9 @@ if ($_POST) {
             
         </div>
 
+        <script>
+        var formulario=document.querySelector('.formulario-de-contacto');
+        var input=document.querySelector("input[name='']")
+        </script>
+
 @endsection

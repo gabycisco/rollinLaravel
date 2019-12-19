@@ -6,7 +6,7 @@
 <div class="row ">
     <div class="col-10 offset-1 editContainer row">
         <div class="col-10">
-            <h1>ADMINISTRADOR DE ARTÍCULOS</h1>
+            <h1>Administrador de Productos</h1>
         </div>
         <div class="button-contactoClaro col-1 offset-1">
             <a href="/admin/create">Agregar</a>
