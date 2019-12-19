@@ -25,8 +25,9 @@ class Cart_Product extends Model
         'cart_id','id'
     ];
 
-  //  public function carrito(){
-  //    return $this->hasMany("App\Cart","id");
+    public function product(){
+      return $this->belongsTo('App\Product');
+  }
 
-  //  }
+
 }
