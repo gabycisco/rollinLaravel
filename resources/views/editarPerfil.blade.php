@@ -55,7 +55,7 @@
              <input id="avatar" type="file" name="avatar" value="">
             </div>
         <div >
-            <button type="submit" class="BOTONROJO botonPerfil guardar " style="margin-left:10px; border:none;">GUARDAR</button>
+            <button type="submit" class="BOTONROJO botonPerfil guardar " style="margin-left:0px; border:none;">GUARDAR</button>
             </div>
       </div>
     </div>
