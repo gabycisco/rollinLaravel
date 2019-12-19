@@ -65,20 +65,20 @@
                         <form action="/admin/create" method="post" class="col-7 offset-1 row" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <label for="name" class="col-12">Nombre</label>
-                            <input type="text" name="name" class="campoACompletar col-12" value={{old("name")}}>
-                            <br><span class="error"> {{$errors->first("name")}} </span>
+                            <input id="name" type="text" name="name" onblur="validarName()" class="campoACompletar col-12" value={{old("name")}}>
+                            <br><span class="error" id="nombre"> {{$errors->first("name")}} </span>
                             <br>
                             <label for="brand_id" class="col-12">Marca</label>
                             <input type="text" name="brand_id" class="campoACompletar col-12" value={{old("brand_id")}}>
                             <br><span class="error"> {{$errors->first("brand_id")}} </span>
                             <br>
                             <label for="description" class="col-12">Descripción</label>
-                            <textarea name="description" class="campoACompletar col-12" rows="5" value={{old("description")}}></textarea>
-                            <br><span class="error"> {{$errors->first("description")}} </span>
+                            <textarea name="description" id="textarea" onblur="validarDesc()" class="campoACompletar col-12" rows="5" value={{old("description")}}></textarea>
+                            <br><span class="error"id="areatexto"> {{$errors->first("description")}} </span>
                             <br>
                             <label for="price" class="col-12">Precio</label>
-                            <p>$ <input type="text" name="price" class="campoACompletar col-6" value={{old("price")}}></p>   
-                            <br><span class="error"> {{$errors->first("price")}} </span>
+                            <p>$ <input type="text" id="price" name="price" onblur="validarPrice()" class="campoACompletar col-6" value={{old("price")}}></p>   
+                            <br><span class="error" id="precio"> {{$errors->first("price")}} </span>
                             <br>
                             <label for="imgProd" class="col-12">Imagen</label>
                             <input type="file" name="imgProd" class="campoACompletar col-6" value={{old("imgProd")}}>
@@ -93,4 +93,42 @@
             </article>
         </div>
     </div>
+
+<script>
+
+function validarName(){
+          var input1=document.querySelector('#name');
+          if(input1.value==""){
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="El nombre del producto es obligatorio y único";
+          }else{
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarDesc(){
+          var input2=document.querySelector('#textarea');
+          if(input2.value==""){
+            var spanErrorNombre=document.querySelector('#areatexto');
+            spanErrorNombre.innerHTML="Escribi una o dos frases atractivas sobre el producto";
+          }else{
+            var spanErrorNombre=document.querySelector('#areatexto');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarPrice(){
+          var input3=document.querySelector('#price');
+          if(input3.value==""){
+            var spanErrorNombre=document.querySelector('#precio');
+            spanErrorNombre.innerHTML="No te olvides de este campo!";
+          }else{
+            var spanErrorNombre=document.querySelector('#precio');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+</script>
+
 @endsection

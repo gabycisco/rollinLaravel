@@ -93,22 +93,22 @@ if ($_POST) {
                   <form class="formulario-de-contacto" method="POST" action="/formularioEnviado">
                   {{csrf_field()}}
                   <label for="name">Nombre</label>
-                    <input id="name" type="text" name="name" value="{{old("name")}}"placeholder="">
+                    <input id="name" type="text" name="name" value="{{old("name")}}"placeholder="" onblur='validarName()'>
                     <br>
-                    <span class="error"> {{$errors->first("name")}} </span>
+                    <span class="error"id='nombre'>{{$errors->first("name")}}</span>
                     <br>
                     <label for="email">Email</label>
-                    <input id="email" type="email" name="email" value="{{old("email")}}"placeholder="">
+                    <input id="email" type="email" name="email" value="{{old("email")}}"placeholder="" onblur='validarMail()'> 
                     <br>
-                    <span class="error"> {{$errors->first("email")}} </span>
+                    <span class="error" id="mail"> {{$errors->first("email")}} </span>
                     <br>
                     <label for="mensaje">Mensaje</label>
-                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"value="{{old("mensaje")}}"></textarea>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10"value="{{old("mensaje")}}" onblur='validarMensaje()'></textarea>
                     <br>
-                    <span class="error"> {{$errors->first("mensaje")}} </span>
+                    <span class="error"id="mensajes"> {{$errors->first("mensaje")}} </span>
                     <br>
                     <div class="button-contacto col-md-4 col-xs-10">
-                      <input type="submit" name="" value="ENVIAR">
+                      <input type="submit" name="" value="ENVIAR" id="boton-contacto">
                     </div>
 
                   </form>
@@ -125,8 +125,38 @@ if ($_POST) {
         </div>
 
         <script>
-        var formulario=document.querySelector('.formulario-de-contacto');
-        var input=document.querySelector("input[name='']")
+        function validarName(){
+          var input1=document.querySelector('#name');
+          if(input1.value==""){
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="Este campo es obligatorio";
+          }else{
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarMail(){
+          var input2=document.querySelector('#email');
+          if(input2.value==""){
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML="Este campo es obligatorio";
+          }else{
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarMensaje(){
+          var input3=document.querySelector('#mensaje');
+          if(input3.value==""){
+            var spanErrorNombre=document.querySelector('#mensajes');
+            spanErrorNombre.innerHTML="Cuáles son tus inquietudes? Estamos para escucharte!";
+          }else{
+            var spanErrorNombre=document.querySelector('#mensajes');
+            spanErrorNombre.innerHTML="";
+          }
+        }
         </script>
 
 @endsection

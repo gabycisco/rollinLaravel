@@ -24,16 +24,16 @@
           <form action="" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <label class="col-lg-4 col-xs-8" for="name">Nombre:</label>
-            <input class=" col-xs-8" id="name" type="text" name="name" value="{{$users->name}}">
-             <span class="error"> {{$errors->first("name")}} </span>
+            <input class=" col-xs-8" id="name" type="text" name="name" value="{{$users->name}}"  onblur='validarName()'>
+             <span class="error"id="nombre"> {{$errors->first("name")}} </span>
              <br>
             <label class="col-lg-4 col-xs-8"  for="surname">Apellido:</label>
-            <input class="col-xs-8" id="surname" type="text" name="surname" value="{{$users->surname}}">
-            <span class="error"> {{$errors->first("surname")}} </span>
+            <input class="col-xs-8" id="surname" type="text" name="surname" value="{{$users->surname}}" onblur='validarSurname()'>
+            <span class="error"id="apellido"> {{$errors->first("surname")}} </span>
             <br>
             <label class="col-lg-4 col-xs-8"  for="email">Email:</label>
-            <input class="col-xs-8"id="email" type="email" name="email" value="{{$users->email}}">
-            <span class="error"> {{$errors->first("email")}} </span>
+            <input class="col-xs-8"id="email" type="email" name="email" value="{{$users->email}}" onblur='validarMail()'>
+            <span class="error"id="mail"> {{$errors->first("email")}} </span>
             <br>
             <label class="col-lg-4 col-xs-8"  for="address">Dirección:</label>
             <input class="col-xs-8"id="addrees" type="text" name="address" value="{{$users->address}}">
@@ -62,6 +62,9 @@
   </div>
 
 <script>
+
+//API
+
 fetch ("https://apis.datos.gob.ar/georef/api/provincias")
     .then(function(response){
         return response.json();
@@ -79,5 +82,42 @@ fetch ("https://apis.datos.gob.ar/georef/api/provincias")
         console.log("Ups! Tenemos un error:"+error)
 
     
-    })</script>
+    })
+    
+    //FUNCIONES DE VALIDACION
+
+    function validarName(){
+          var input1=document.querySelector('#name');
+          if(input1.value==""){
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="Este campo es obligatorio";
+          }else{
+            var spanErrorNombre=document.querySelector('#nombre');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarSurname(){
+          var input2=document.querySelector('#surname');
+          if(input2.value==""){
+            var spanErrorNombre=document.querySelector('#apellido');
+            spanErrorNombre.innerHTML="Este campo es obligatorio";
+          }else{
+            var spanErrorNombre=document.querySelector('#apellido');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+
+        function validarMail(){
+          var input3=document.querySelector('#email');
+          if(input3.value==""){
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML="Este campo es obligatorio";
+          }else{
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+    
+    </script>
   @endsection

@@ -51,15 +51,12 @@
             SUSCRIBITE A NUESTRO NEWSLETTER!</h2>
         </article>
         <article class="formularioNews col-lg-5  col-xs-12 row">
-                <ul style='color:red' class='errores'>
-                    @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>
-                    @endforeach
-                </ul>
             <form method='POST' action='/NLEnviado' class="col-12 row">
                 {{csrf_field()}}
                 <div class="col-10 offeset-1" style="padding: 0;" >   
-                    <input type="email" class="form-control" placeholder="e-mail" name='email' value='{{old("email")}}'>
+                    <input type="email" id="email" onblur="validarMail()" class="form-control" placeholder="e-mail" name='email' value='{{old("email")}}'>
+                    <br>
+                    <span class="error"id="mail" style="background-color:#e8d8be; font-size:12pt;"> {{$errors->first("email")}} </span>
                 </div>
                 <div class="col-1" >
                     <button  type="submit" class="btn">ENVIAR</button>
@@ -67,4 +64,19 @@
             </form>
         </article>
     </section>
+
+<script>
+
+function validarMail(){
+          var input2=document.querySelector('#email');
+          if(input2.value==""){
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML=" -Te arrepentiste? Prometemos no llenarte de Spam! ";
+          }else{
+            var spanErrorNombre=document.querySelector('#mail');
+            spanErrorNombre.innerHTML="";
+          }
+        }
+</script>
+
 @endsection
