@@ -103,7 +103,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/checkout','CartProductController@checkout')->middleware('auth');
 
     //VER COMPRAS
-    Route::get('/verCompras','CartProductController@listado')->middleware('auth');
+    Route::get('/verCompras/{id}','CartProductController@listado')->middleware('auth');
 
 
 //RUTAS ADMIN

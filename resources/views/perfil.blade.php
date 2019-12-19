@@ -33,7 +33,7 @@
           </div>
           @if (Auth::user()->admin==0)
           <div class="BOTONROJO botonPerfil">
-            <a href="#">VER COMPRAS</a>
+            <a href="/verCompras/{{$users->id}}">VER COMPRAS</a>
           </div>
           @endif
           <br><br>

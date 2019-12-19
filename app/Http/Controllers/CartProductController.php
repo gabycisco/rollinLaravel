@@ -246,9 +246,14 @@ class CartProductController extends Controller
         return view('/store/graciasCompra');
     }
     
-    function listado (){
-      $compras = Cart_Product::all();
-      $vac = compact('compras');
-      return view('verCompras',$vac);
+    function listado($id){
+      $carritosCerrados= Cart::where([
+        ['user_id', '=', "$id"],
+        ['status', '=', 0],
+    ])->get();
+    $datos=Cart_Product::all();
+    $vac=compact('carritosCerrados','datos');
+    
+      return view ('verCompras', $vac);
     }
 }
