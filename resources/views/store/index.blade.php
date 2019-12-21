@@ -23,7 +23,7 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  
+
 </style>
 <div class="row ">
     <div class="col-10 offset-1 editContainer row">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-12 row">
                         <div class="productTitle col-12">
-                            <a href="/store/detail/{{$product->id}}"> <h3 class="overflow-ellipsis" alt="{{$product->name}}">{{$product->name}}</h3></a></div>    
+                            <a href="/store/detail/{{$product->id}}"> <h3 class="overflow-ellipsis" alt="{{$product->name}}">{{$product->name}}</h3></a></div>
                         <div class="productBrand col-12">
                             <a href="/store/detail/{{$product->id}}"> <p>Marca: {{$product->brand_id}}</p></a>
                         </div>
@@ -62,4 +62,3 @@
 
 
 @endsection
-
