@@ -22,8 +22,8 @@
                             <label for="name" class="col-12">Nombre</label>
                             <input type="text" name="name" value="{{$product->name}}" class="campoACompletar col-12" value={{old("name")}}>
 
-                            <label for="brand_id" class="col-12">Marca</label>
-                            <input type="text" name="brand_id" value="{{$product->brand_id}}" class="campoACompletar col-12" value={{old("brand_id")}}>
+                            <label for="brand" class="col-12">Marca</label>
+                            <input type="text" name="brand" value="{{$product->brand}}" class="campoACompletar col-12" value={{old("brand")}}>
                             
                             <label for="description" class="col-12">Descripción</label>
                             <textarea name="description"  class="campoACompletar col-12" rows="5" value={{old("description")}}>{!!nl2br($product->description)!!}</textarea>

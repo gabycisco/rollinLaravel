@@ -31,7 +31,7 @@
             <h1>Tienda</h1>
         </div>
             @forelse ($products as $product)
-                <section class="tiendaArticulo col-3 row">
+                <section class="tiendaArticulo col-3 row" >
                     <div class="productImg col-12">
                         <a href="/store/detail/{{$product->id}}"><img src="/storage/{{$product->img}}" alt="{{$product->name}}"></a>
                     </div>

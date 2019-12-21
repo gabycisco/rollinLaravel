@@ -19,7 +19,7 @@
                             <h3>{{$product->name}}</h3>
                         </div>
                         <div class="productBrand col-12">
-                            <p>Marca: {{$product->brand_id}}</p>
+                            <p>Marca: {{$product->brand}}</p>
                         </div>
                         <div class="productDescription col-12">
                             <p>Detalle:</p>
